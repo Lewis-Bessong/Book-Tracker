@@ -9,16 +9,26 @@
 // list, vector, class, just think of a data structure
 
 class BookTracker {
-    
-
-
-
+    public:
+        std::string Name;
+        std::string Genre;
+        int Pages; 
+        int Rating;
 
 };
 
 main() {
- 
+    std::string NameInput;
 
+    std::cout << "Book Name: ";
+    std::cin >> NameInput;
+
+ 
+    BookTracker Tracker; 
+    
+    Tracker.Name = NameInput;
+    
+    std::cout << "Book Name = " << Tracker.Name << std::endl; 
 
 
 
