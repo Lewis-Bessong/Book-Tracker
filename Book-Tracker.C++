@@ -8,27 +8,29 @@
 
 class BookTracker {
     public:
+        // attributes
         std::string Name;
         std::string Genre;
         int Pages; 
         int Rating;
 
+        // methods
+        void BookEval() {
+
+            std::cout << "Book Name: ";
+            std::cin >> Name;
+
+            std::cout << "Book is " << Name << std::endl;
+
+        }
+
 };
 
 main() {
-    std::string NameInput;
 
-    std::cout << "Book Name: ";
-    std::cin >> NameInput;
+BookTracker Tracker;
 
- 
-    BookTracker Tracker; 
-    
-    Tracker.Name = NameInput;
-    
-    std::cout << "Book Name = " << Tracker.Name << std::endl; 
-
-
+Tracker.BookEval();
 
     return 0;
 }
