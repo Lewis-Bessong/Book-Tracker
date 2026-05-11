@@ -16,23 +16,17 @@ class BookTracker {
 
         // methods
         void BookSave() { // for storing books
-
             std::cout << "Book Name: ";
             std::cin >> Name;
-
-            std::cout << "Book is " << Name << std::endl;
-
         }
 
         void BookView() { // for viewing saved books
-
         }
 
         void SystemStop() { //for stoping the program
-
         }
-
-
+    private:
+    
 
 };
 
@@ -53,7 +47,7 @@ std::cout << "3. Stop Tracker\n\n";
 std::cout << "Enter Here: ";
 std::cin >> UserChoice;
 
-
+// conditonal + input error feature
     return 0;
 }
 
