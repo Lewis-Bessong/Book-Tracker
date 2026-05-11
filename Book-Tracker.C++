@@ -15,7 +15,7 @@ class BookTracker {
         int Rating;
 
         // methods
-        void BookEval() {
+        void BookSave() { // for storing books
 
             std::cout << "Book Name: ";
             std::cin >> Name;
@@ -24,13 +24,35 @@ class BookTracker {
 
         }
 
+        void BookView() { // for viewing saved books
+
+        }
+
+        void SystemStop() { //for stoping the program
+
+        }
+
+
+
 };
 
 main() {
 
+// system resources
 BookTracker Tracker;
+int UserChoice;
 
-Tracker.BookEval();
+// conditional
+
+std::cout << "Welcome to Your Book Tracker!\n\n";
+
+std::cout << "1. Save New Book\n"; 
+std::cout << "2. View Saved Book\n";
+std::cout << "3. Stop Tracker\n\n";
+
+std::cout << "Enter Here: ";
+std::cin >> UserChoice;
+
 
     return 0;
 }
