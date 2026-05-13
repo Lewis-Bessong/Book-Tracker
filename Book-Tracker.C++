@@ -18,6 +18,15 @@ class BookTracker {
         void BookSave() { // for storing books
             std::cout << "Book Name: ";
             std::cin >> Name;
+
+            std::cout << "\nBook Genre: ";
+            std::cin >> Genre;
+
+            std::cout << "\nBook Pages: ";
+            std::cin >> Pages;
+
+            std::cout << "Book Rating (1-10): ";
+            std::cin >> Rating;
         }
 
         void BookView() { // for viewing saved books
@@ -48,6 +57,25 @@ std::cout << "Enter Here: ";
 std::cin >> UserChoice;
 
 // conditonal + input error feature
+int a = 1, b = 2, c = 3; 
+switch (a+b*c) {
+
+    case 1:
+    Tracker.BookSave();
+    break;
+
+    case 2: 
+    Tracker.BookView();
+    break;
+
+    case 3:
+    Tracker.SystemStop();
+    break;
+
+    deafult:
+    std::cout << "?" << std::endl;
+}
+
     return 0;
 }
 
