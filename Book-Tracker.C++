@@ -16,7 +16,11 @@ class BookTracker {
 
         // methods
         void BookSave() { // for storing books
-            std::cout << "Book Name: ";
+
+            //invlaid input feature ?
+            // Name input problem (no spacing)
+
+            std::cout << "\nBook Name: ";
             std::cin >> Name;
 
             std::cout << "\nBook Genre: ";
@@ -25,7 +29,7 @@ class BookTracker {
             std::cout << "\nBook Pages: ";
             std::cin >> Pages;
 
-            std::cout << "Book Rating (1-10): ";
+            std::cout << "\nBook Rating (1-10): ";
             std::cin >> Rating;
         }
 
@@ -33,6 +37,8 @@ class BookTracker {
         }
 
         void SystemStop() { //for stoping the program
+
+            std::abort; 
         }
     private:
     
@@ -71,7 +77,7 @@ switch (UserChoice) {
     Tracker.SystemStop();
     break;
 
-    deafult:
+    default:
     std::cout << "Wrong Input" << std::endl;
 }
 
