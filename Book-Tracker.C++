@@ -57,8 +57,7 @@ std::cout << "Enter Here: ";
 std::cin >> UserChoice;
 
 // conditonal + input error feature
-int a = 1, b = 2, c = 3; 
-switch (a+b*c) {
+switch (UserChoice) {
 
     case 1:
     Tracker.BookSave();
@@ -73,7 +72,7 @@ switch (a+b*c) {
     break;
 
     deafult:
-    std::cout << "?" << std::endl;
+    std::cout << "Wrong Input" << std::endl;
 }
 
     return 0;
