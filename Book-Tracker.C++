@@ -20,18 +20,14 @@ class BookTracker {
             //invlaid input feature ?
             // Name input problem (no spacing)
 
+            
             std::cout << "\nBook Name: ";
+            std::cin >> Name;
             std::getline(std::cin, Name);
-            std::cout << "You Entered: " << Name;
+        
+            std::cout << "You inputed: " << Name << std::endl; 
+            
 
-            std::cout << "\nBook Genre: ";
-            std::cin >> Genre;
-
-            std::cout << "\nBook Pages: ";
-            std::cin >> Pages;
-
-            std::cout << "\nBook Rating (1-10): ";
-            std::cin >> Rating;
         }
 
         void BookView() { // for viewing saved books
@@ -91,5 +87,16 @@ switch (UserChoice) {
 . develop class
 . code/terminal should match project vision
 . possible nested class/ data strutures
+
+std::cout << "\nBook Genre: ";
+            std::cin >> Genre;
+
+            std::cout << "\nBook Pages: ";
+            std::cin >> Pages;
+
+            std::cout << "\nBook Rating (1-10): ";
+            std::cin >> Rating;
+
+            std::cout << "\nBook Name: " << Name;
 
 */
