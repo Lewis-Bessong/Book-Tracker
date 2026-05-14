@@ -52,9 +52,9 @@ BookTracker Tracker;
 int UserChoice;
 
 // conditional
-
 std::cout << "Welcome to Your Book Tracker!\n\n";
 
+// future options for user later 
 std::cout << "1. Save New Book\n"; 
 std::cout << "2. View Saved Book\n";
 std::cout << "3. Stop Tracker\n\n";
