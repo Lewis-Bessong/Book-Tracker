@@ -21,7 +21,8 @@ class BookTracker {
             // Name input problem (no spacing)
 
             std::cout << "\nBook Name: ";
-            std::cin >> Name >> Name; //added 2 names for more space for users book name
+            std::getline(std::cin, Name);
+            std::cout << "You Entered: " << Name;
 
             std::cout << "\nBook Genre: ";
             std::cin >> Genre;
