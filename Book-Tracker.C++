@@ -18,25 +18,24 @@ class BookTracker {
         void BookSave() { // for storing books
 
             //invlaid input feature ?
-            // Name input problem (no spacing)
-
             
-            std::cout << "\nBook Name: ";
+            std::cout << "Book Name:";
             std::cin >> Name;
+            std::cin.ignore();
             std::getline(std::cin, Name);
         
             std::cout << "You inputed: " << Name << std::endl; 
             
 
-        }
+        };
 
         void BookView() { // for viewing saved books
-        }
+        };
 
         void SystemStop() { //for stoping the program
 
             std::abort; 
-        }
+        };
     private:
     
 
