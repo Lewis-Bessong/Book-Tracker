@@ -36,6 +36,7 @@ class BookTracker {
 
         void SystemStop() { //for stoping the program
 
+            std::cout << "Tracker Stopped." << std::endl;
             std::abort; 
         }
     private:
