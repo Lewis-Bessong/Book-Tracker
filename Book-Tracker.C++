@@ -20,11 +20,24 @@ class BookTracker {
             // getline feature still has bug with missing first word
 
             std::cin.ignore(); // used to clear the buffer of previous '\n' 
-            std::cout << "Name:";
+            std::cout << "Name: ";
             std::getline(std::cin, Name); // used to read input with spaces 
 
-            std::cout << "Book Name: " << Name << std::endl;
+            std::cout << "Genre: ";
+            std::getline(std::cin, Genre); 
 
+            std::cout << "# of Pages: ";
+            std::cin >> Pages;
+
+            std::cout << "Book Rating (1-10): ";
+            std::cin >> Rating;
+
+            std::cout << "\nBook Name: " << Name << std::endl;
+            std::cout << "Genre: " << Genre << std::endl;
+            std::cout << "Pages: " << Pages << std::endl;
+            std::cout << "Book Rating: " << Rating << std::endl;
+
+            
         }
 
         void BookView() { // for viewing saved books
