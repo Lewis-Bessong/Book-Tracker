@@ -17,7 +17,8 @@ class BookTracker {
         // methods
         void BookSave() { // for storing books
 
-            // getline feature still has bug with missing first word
+            // invalid input feature needed
+            // 
 
             std::cin.ignore(); // used to clear the buffer of previous '\n' 
             std::cout << "Name: ";
@@ -32,10 +33,13 @@ class BookTracker {
             std::cout << "Book Rating (1-10): ";
             std::cin >> Rating;
 
+
+
             std::cout << "\nBook Name: " << Name << std::endl;
             std::cout << "Genre: " << Genre << std::endl;
             std::cout << "Pages: " << Pages << std::endl;
             std::cout << "Book Rating: " << Rating << std::endl;
+
 
             
         }
@@ -50,6 +54,7 @@ class BookTracker {
 
             std::cout << "Tracker Stopped." << std::endl;
             std::abort; 
+
         }
     private:
     
@@ -74,6 +79,9 @@ std::cout << "Enter Here: ";
 std::cin >> UserChoice;
 
 // conditonal + input error feature
+
+// possible loop will be needed
+
 switch (UserChoice) {
 
     case 1:
@@ -98,19 +106,8 @@ switch (UserChoice) {
 
 /* Notes 
 
-. develop class
+. Need way to save book and be available to view later 
 . code/terminal should match project vision
 . possible nested class/ data strutures
-
-std::cout << "\nBook Genre: ";
-            std::cin >> Genre;
-
-            std::cout << "\nBook Pages: ";
-            std::cin >> Pages;
-
-            std::cout << "\nBook Rating (1-10): ";
-            std::cin >> Rating;
-
-            std::cout << "\nBook Name: " << Name;
 
 */
