@@ -14,7 +14,13 @@ class BookTracker {
         int Pages; 
         int Rating;
 
+
         // methods
+        void TrackerMode() { // what usr will use to choose modes within tracker (conditionals) 
+
+        }
+
+
         void BookSave() { // for storing books
 
             // invalid input feature needed
@@ -62,6 +68,7 @@ class BookTracker {
 };
 
 main() {
+    // switch main code to be tracker mode emthod instead
 
 // system resources
 BookTracker Tracker;
