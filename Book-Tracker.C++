@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm> 
 
 // This is the online book tracker, a place for where users can store there books after they have read them
 // this book tracker has a book wish list, favorites list, and scaling system.
@@ -22,6 +23,23 @@ class BookTracker {
 
             std::cout << "Option: ";
             std::cin >> UserMode;
+
+            switch(UserMode) {
+                case 1: 
+                    BookSave();
+                
+                    break;
+                case 2:
+                    BookView();
+
+                    break;
+                case 3:
+                    SystemStop();
+
+                default:
+
+                    std::cout << "Wrong Input" << std::endl;
+            }
             
             // Add loop conditionals (case, if else)
             // Find out if you can call another method within a method in the same class
