@@ -54,7 +54,25 @@ class BookTracker {
         }
 
         void BookSave() { // for storing books
+
             
+            
+            std::cout << "\nBook Name: ";
+            getline(std::cin, Name);
+
+            std::cout << "Genre: ";
+            getline(std::cin, Genre);
+
+            std::cout << "Pages: ";
+            std::cin >> Pages;
+
+            std::cout << "Book Rating(1-10): ";
+            std::cin >> Rating;
+
+            
+            file.close();
+            
+
         }
 
         void BookView() { // for viewing saved books
