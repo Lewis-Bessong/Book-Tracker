@@ -16,7 +16,9 @@ class BookTracker {
 
 
         // methods
-        void TrackerMode() { // what usr will use to choose modes within tracker (conditionals) 
+        void TrackerMode() { // what usr will use to choose modes within tracker (conditionals)
+            
+            
 
             // Add loop conditionals (case, if else)
             // Find out if you can call another method within a method in the same class
@@ -70,44 +72,8 @@ class BookTracker {
 };
 
 main() {
-    // switch main code to be tracker mode emthod instead
 
-// system resources
-BookTracker Tracker;
-int UserChoice;
 
-// conditional
-std::cout << "Welcome to Your Book Tracker!\n\n";
-
-// future options for user later 
-std::cout << "1. Save New Book\n"; 
-std::cout << "2. View Saved Book\n";
-std::cout << "3. Stop Tracker\n\n";
-
-std::cout << "Enter Here: ";
-std::cin >> UserChoice;
-
-// conditonal + input error feature
-
-// possible loop will be needed
-
-switch (UserChoice) {
-
-    case 1:
-    Tracker.BookSave();
-    break;
-
-    case 2: 
-    Tracker.BookView();
-    break;
-
-    case 3:
-    Tracker.SystemStop();
-    break;
-
-    default:
-    std::cout << "Wrong Input" << std::endl;
-}
 
     return 0;
 }
