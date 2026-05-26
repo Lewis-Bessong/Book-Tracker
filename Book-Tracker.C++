@@ -13,13 +13,16 @@ class BookTracker {
         std::string Genre;
         int Pages; 
         int Rating;
+        int UserMode;
 
 
         // methods
-        void TrackerMode() { // what usr will use to choose modes within tracker (conditionals)
-            
-            
+        void Mode() { // what user will use to choose modes within tracker (conditionals)
+            BookTracker Tracker; 
 
+            std::cout << "Option: ";
+            std::cin >> UserMode;
+            
             // Add loop conditionals (case, if else)
             // Find out if you can call another method within a method in the same class
         }
@@ -72,6 +75,14 @@ class BookTracker {
 };
 
 main() {
+    BookTracker Tracker;
+
+    std::cout << "Welcome to your Book tracker." << std::endl;
+    std::cout << "1. Save Book" << std::endl;
+    std::cout << "2. Track Book" << std::endl; 
+    std::cout << "3. Stop Program" << std::endl;
+    
+    Tracker.Mode();
 
 
 
