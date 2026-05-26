@@ -2,6 +2,7 @@
 #include <string>
 #include <algorithm> 
 
+
 // This is the online book tracker, a place for where users can store there books after they have read them
 // this book tracker has a book wish list, favorites list, and scaling system.
 
@@ -15,7 +16,6 @@ class BookTracker {
         int Pages; 
         int Rating;
         int UserMode;
-
 
         // methods
         void Mode() { // what user will use to choose modes within tracker (conditionals)
@@ -53,11 +53,8 @@ class BookTracker {
             
         }
 
-
         void BookSave() { // for storing books
-
-            std::cout << "Book #: ";
-
+            
         }
 
         void BookView() { // for viewing saved books
@@ -77,6 +74,7 @@ class BookTracker {
 
         }
     private:
+
     
 
 };
