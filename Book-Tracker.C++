@@ -19,56 +19,45 @@ class BookTracker {
 
         // methods
         void Mode() { // what user will use to choose modes within tracker (conditionals)
+            // Find out if you can call another method within a method in the same class
+            // Add loop conditionals (case, if else)
+
+
             BookTracker Tracker; 
 
-            std::cout << "Option: ";
+            std::cout << "\nOption: ";
             std::cin >> UserMode;
 
             switch(UserMode) {
                 case 1: 
+
+                    std::cout << "\n";
                     BookSave();
                 
                     break;
                 case 2:
+
+                    std::cout << "\n";
                     BookView();
 
                     break;
                 case 3:
+
+                    std::cout << "\n";
                     SystemStop();
 
                 default:
 
-                    std::cout << "Wrong Input" << std::endl;
+                    std::cout << "\nWrong Input" << std::endl;
             }
             
-            // Add loop conditionals (case, if else)
-            // Find out if you can call another method within a method in the same class
         }
 
 
         void BookSave() { // for storing books
 
-            // invalid input feature needed
-             
+            std::cout << "Book #: ";
 
-            std::cin.ignore(); // used to clear the buffer of previous '\n' 
-            std::cout << "Name: ";
-            std::getline(std::cin, Name); // used to read input with spaces 
-
-            std::cout << "Genre: ";
-            std::getline(std::cin, Genre); 
-
-            std::cout << "# of Pages: ";
-            std::cin >> Pages;
-
-            std::cout << "Book Rating (1-10): ";
-            std::cin >> Rating;
-
-            //to check if everything is good after inpiut
-            std::cout << "\nBook Name: " << Name << std::endl;
-            std::cout << "Genre: " << Genre << std::endl;
-            std::cout << "Pages: " << Pages << std::endl;
-            std::cout << "Book Rating: " << Rating << std::endl;      
         }
 
         void BookView() { // for viewing saved books
@@ -101,7 +90,6 @@ main() {
     std::cout << "3. Stop Program" << std::endl;
     
     Tracker.Mode();
-
 
 
     return 0;
