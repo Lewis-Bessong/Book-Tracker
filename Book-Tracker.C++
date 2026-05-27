@@ -2,14 +2,31 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> BookNumber = {"1", "2", "3", "4", "5"};
+
+
+struct BookTracker {
+    public: 
+        std::string title; 
+        std::string author;
+        std::string genre;
+        int pages;
+        int rating;
+
+
+
+
+    private:
+
+    //container??
+    std::vector<int> BookNumber = {1, 2, 3, 4, 5};
+
+};
+
+
+
 
 main() {
 
-
-
-
-    return 0;
 }
 
 
