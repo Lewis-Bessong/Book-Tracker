@@ -16,63 +16,42 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
  
         void Mode() {
 
-            std::string mode;
 
-            std::cout << "Please choose desired mode.\n";
-            std::cout << "1. Save\n";
-            std::cout << "2. View/Change\n";
-            std::cout << "3. End" << std::endl;
+            bool mode = false;
 
-            std::cout << "\nMode ('1', '2', '3'): ";
-            std::cin >> mode;
+            do {
 
-            if (mode == "1") {
+                std::string mode;
 
-                std::cout << "Saving book.." << std::endl;
-            } else if (mode == "2") {
+                std::cout << "Please choose desired mode.\n";
+                std::cout << "1. Save\n";
+                std::cout << "2. View/Change\n";
+                std::cout << "3. End" << std::endl;
 
-                std::cout << "Editing book.." << std::endl;
-            } else if (mode == "3") {
+                std::cout << "\nMode ('1', '2', '3'): ";
+                std::cin >> mode;
 
-                std::cout << "Goodbye." << std::endl;
-                std::exit;
-            } else {
+                if (mode == "1") {
 
-                do {
+                    mode = true;
+                    std::cout << "Saving book.." << std::endl;
+                    break;
+                } else if (mode == "2") {
 
-                    std::cout << "Invalid. Please enter the options below." << std::endl;
+                    mode = true;
+                    std::cout << "Editing book.." << std::endl;
+                    break;
+                } else if (mode == "3") {
 
-                    std::cout << "Please choose desired mode.\n";
-                    std::cout << "1. Save\n";
-                    std::cout << "2. View/Change\n";
-                    std::cout << "3. End" << std::endl;
+                    mode = true;
+                    std::cout << "Goodbye." << std::endl;
+                    std::exit;
+                } else {
 
-                    std::cout << "\nMode ('1', '2', '3'): ";
-                    std::cin >> mode;
+                    std::cout << "Invlaid" << std::endl;
+                }
 
-                    if (mode == "1") {
-
-                        std::cout << "Saving book.." << std::endl;
-                    } else if (mode == "2") {
-
-                        std::cout << "Editing book.." << std::endl;
-                    } else if (mode == "3") {
-
-                        std::cout << "Goodbye." << std::endl;
-                        std::exit;
-                    } else {
-                
-                        do {
-
-                            std::cout << "Invalid." << std::endl;
-
-
-
-                        } while (mode != "1" || "2" || "3");
-                    }
-
-                        } while (mode != "1" || "2" || "3");
-                    }
+            } while (mode);
             
         }
 
