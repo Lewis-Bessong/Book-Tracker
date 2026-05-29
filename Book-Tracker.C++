@@ -16,42 +16,41 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
  
         void Mode() {
 
-
-            bool mode = false;
+            std::string mode;
 
             do {
 
-                std::string mode;
-
+                //question
                 std::cout << "Please choose desired mode.\n";
                 std::cout << "1. Save\n";
                 std::cout << "2. View/Change\n";
                 std::cout << "3. End" << std::endl;
 
+                //get info
                 std::cout << "\nMode ('1', '2', '3'): ";
                 std::cin >> mode;
 
+                // check if valid
                 if (mode == "1") {
 
-                    mode = true;
                     std::cout << "Saving book.." << std::endl;
                     break;
                 } else if (mode == "2") {
 
-                    mode = true;
                     std::cout << "Editing book.." << std::endl;
                     break;
                 } else if (mode == "3") {
 
-                    mode = true;
+                    
                     std::cout << "Goodbye." << std::endl;
+                    break;
                     std::exit;
                 } else {
 
-                    std::cout << "Invlaid" << std::endl;
+                    std::cout << "Invlaid. Please enter the available options by their #. \n\n";
                 }
 
-            } while (mode);
+            } while (true);
             
         }
 
