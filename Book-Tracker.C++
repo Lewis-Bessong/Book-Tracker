@@ -38,24 +38,41 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
                 std::exit;
             } else {
 
-                std::cout << "Invalid. Please enter the options below" << std::endl;
+                do {
 
-                std::cout << "1. Save\n";
-                std::cout << "2. View/Change\n";
-                std::cout << "3. End" << std::endl;
+                    std::cout << "Invalid. Please enter the options below." << std::endl;
 
-                std::cout << "\nMode: ";
-                std::cin >> mode;
+                    std::cout << "Please choose desired mode.\n";
+                    std::cout << "1. Save\n";
+                    std::cout << "2. View/Change\n";
+                    std::cout << "3. End" << std::endl;
 
-                while (mode != "1" || "2" || "3") {
+                    std::cout << "\nMode ('1', '2', '3'): ";
+                    std::cin >> mode;
 
-                    std::cout << "Invalid. Please enter the options below (1, 2, 3 ...)" << std::endl;
+                    if (mode == "1") {
+
+                        std::cout << "Saving book.." << std::endl;
+                    } else if (mode == "2") {
+
+                        std::cout << "Editing book.." << std::endl;
+                    } else if (mode == "3") {
+
+                        std::cout << "Goodbye." << std::endl;
+                        std::exit;
+                    } else {
+                
+                        do {
+
+                            std::cout << "Invalid." << std::endl;
 
 
-                }
 
+                        } while (mode != "1" || "2" || "3");
+                    }
 
-            }
+                        } while (mode != "1" || "2" || "3");
+                    }
             
         }
 
