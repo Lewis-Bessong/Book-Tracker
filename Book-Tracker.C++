@@ -14,7 +14,7 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
         int pages;
         int rating;
  
-        void Mode() { // see to make text layout better/readable.
+        void Mode() { // see to make text layout better/readable. (future change to switch statements for efficeincy)
 
             std::string mode;
 
@@ -50,6 +50,10 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
                 } else {
 
                     std::cout << "Invlaid. Please enter the available options by their #. \n\n";
+                    std::cin.ignore(); // to ignore leftover characters 
+                    std::cin.clear(); // clearing bad input
+                    
+
                 }
 
             } while (true); // will always loop based on 'true' but 'break' within conditionals exit loop
@@ -69,10 +73,9 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
             //something to do with class objects
             // think of way that user could change their data input
             // data struc might be needed
+            // might need to use string tools from string header
 
         };
-
-
 
     private:
 
