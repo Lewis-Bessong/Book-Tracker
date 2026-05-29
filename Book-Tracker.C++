@@ -56,9 +56,21 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
             
         }
 
-        void Save() {}; // find out how to store user info about books
+        void Save() { // find out how to store user info about books
 
-        void View() {};
+            //need something to save and keep data fromo user
+            //data structure might be needed to keep organize
+            //something to do with class objects 
+
+        }; 
+
+        void View() {
+
+            //something to do with class objects
+            // think of way that user could change their data input
+            // data struc might be needed
+
+        };
 
 
 
@@ -67,10 +79,7 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
     //container for user books
     std::vector<std::string> Book = {"1", "2", "3"};
 
-
 };
-
-
 
 
 main(){
@@ -82,12 +91,3 @@ main(){
  Tracker.Mode();
 
 }
-
-
-/* Notes 
-
-. Need way to save book and be available to view later 
-. code/terminal should match project vision
-. possible nested class/ data strutures
-
-*/
