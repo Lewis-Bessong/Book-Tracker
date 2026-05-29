@@ -1,9 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <map>
-#include <limits>
-
 
 struct BookTracker { // 'struct' to keep everythign together regardless of type
     public: 
@@ -83,7 +80,6 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
     std::vector<std::string> Book = {"1", "2", "3"};
 
 };
-
 
 main(){
 
