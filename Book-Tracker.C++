@@ -16,7 +16,7 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
  
         void Mode() {
 
-            int mode;
+            std::string mode;
 
             std::cout << "Please choose desired mode.\n";
             std::cout << "1. Save\n";
@@ -26,33 +26,35 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
             std::cout << "\nMode ('1', '2', '3'): ";
             std::cin >> mode;
 
-            switch(mode) {
+            if (mode == "1") {
 
-                case 1: // add save method 
+                std::cout << "Saving book.." << std::endl;
+            } else if (mode == "2") {
 
-                    std::cout << "Getting Program for saving book..." << std::endl;
-                    break;
-                case 2: // add view method
+                std::cout << "Editing book.." << std::endl;
+            } else if (mode == "3") {
 
-                    std::cout << "Getting Program for editing books..." << std::endl;
-                    break;
-                case 3: //add time stop then end program after
+                std::cout << "Goodbye." << std::endl;
+                std::exit;
+            } else {
 
-                    std::cout << "Stopping Program..." << std::endl;
-                    break;
+                do{
 
-                default: 
-                
-                // found out how to aks question again and repeat
-                do { 
+                    std::cout << "Invalid. Please enter 1, 2, or 3 only." << std::endl;
 
-                    std::cout << "\nWrong Input. (Enter just '1', '2'..)" << std::endl;
-                    std::cin.clear(); //clear error flag 
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // disregard bad input
+                    std::cout << "1. Save\n";
+                    std::cout << "2. View/Change\n";
+                    std::cout << "3. End" << std::endl;
 
-                } while (false);
+                    std::cout << "\nMode: ";
+                    std::cin >> mode;
 
+
+                } while (mode != "1" || "2" || "3");
             }
+
+
+            
         }
 
 
