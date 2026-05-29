@@ -38,22 +38,24 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
                 std::exit;
             } else {
 
-                do{
+                std::cout << "Invalid. Please enter the options below" << std::endl;
 
-                    std::cout << "Invalid. Please enter 1, 2, or 3 only." << std::endl;
+                std::cout << "1. Save\n";
+                std::cout << "2. View/Change\n";
+                std::cout << "3. End" << std::endl;
 
-                    std::cout << "1. Save\n";
-                    std::cout << "2. View/Change\n";
-                    std::cout << "3. End" << std::endl;
+                std::cout << "\nMode: ";
+                std::cin >> mode;
 
-                    std::cout << "\nMode: ";
-                    std::cin >> mode;
+                while (mode != "1" || "2" || "3") {
+
+                    std::cout << "Invalid. Please enter the options below (1, 2, 3 ...)" << std::endl;
 
 
-                } while (mode != "1" || "2" || "3");
+                }
+
+
             }
-
-
             
         }
 
