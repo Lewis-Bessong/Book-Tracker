@@ -11,7 +11,7 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
         int pages;
         int rating;
  
-        void Mode() { // see to make text layout better/readable. (future change to switch statements for efficeincy)
+        void Program() { // see to make text layout better/readable. (future change to switch statements for efficeincy)
 
             std::string mode;
 
@@ -87,15 +87,10 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
         };
 
     private: // nonaccesale in main
-        
-        //varibles   
+
+        //varibles 
+
         //data struc for saving
-
-        //methods
-        void BookTitles() {
-
-
-        };
 
 };
 
@@ -105,6 +100,6 @@ main(){
 
  std::cout << "Welcome to your Book Tracker." << std::endl;
 
- Tracker.Mode();
+ Tracker.Program();
 
 }
