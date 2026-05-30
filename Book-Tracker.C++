@@ -31,9 +31,9 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
                 if (mode == "1") {
 
                     // Save method
-                    std::cout << "Saving program..." << std::endl;
-                    // after method need to find way to loop into this conditional again for user.
-                    break;
+                    Save();
+                    // repeats conditional after save method
+
                 } else if (mode == "2") {
 
                     View();
@@ -49,31 +49,11 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
                     std::cout << "Invlaid. Please enter the available options by their #. \n\n";
                     std::cin.ignore(); // to ignore leftover characters 
                     std::cin.clear(); // clearing bad input
-                    
-
                 }
 
             } while (true); // will always loop based on 'true' but 'break' within conditionals exit loop
             
         } 
-
-
-
-        void View() {
-
-            //something to do with class objects
-            // think of way that user could change their data input
-            // data struc might be needed
-            // might need to use string tools from string header
-
-        };
-
-    private: // nonaccesale in main
-        
-        //varibles
-        std::string user_title;
-
-        //data struc for saving
 
         void Save() { // find out how to store user info about books
             std::cout << "\nPlease enter the info of the book you want to save below." << std::endl;
@@ -94,7 +74,29 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
             std::cout << title << std::endl; 
             std::cout << pages << std::endl;
             std::cout << rating << std::endl;
+            std::cout << "\n"; 
         };
+        
+        void View() {
+
+            //something to do with class objects
+            // think of way that user could change their data input
+            // data struc might be needed
+            // might need to use string tools from string header
+
+        };
+
+    private: // nonaccesale in main
+        
+        //varibles   
+        //data struc for saving
+
+        //methods
+        void BookTitles() {
+
+
+        };
+
 };
 
 main(){
