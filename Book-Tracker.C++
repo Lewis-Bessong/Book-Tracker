@@ -2,12 +2,12 @@
 #include <string>
 #include <vector>
 
-struct BookTracker { // 'struct' to keep everythign together regardless of type
+struct BookTracker { // 'struct' to keep everything together regardless of type
     public: 
 
         std::string title; 
-        std::string author;
-        std::string genre;
+        std::string author; // used later
+        std::string genre; // used later 
         int pages;
         int rating;
  
@@ -31,7 +31,7 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
                 if (mode == "1") {
 
                     // Save method
-                    Save();
+                    std::cout << "Saving program..." << std::endl;
                     // after method need to find way to loop into this conditional again for user.
                     break;
                 } else if (mode == "2") {
@@ -55,31 +55,9 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
 
             } while (true); // will always loop based on 'true' but 'break' within conditionals exit loop
             
-        }
+        } 
 
-        void Save() { // find out how to store user info about books
-            std::cout << "\nPlease enter the info of the book you want to save below." << std::endl;
 
-            //reset input 
-            std::cin.ignore();
-            std::cin.clear();
-
-            std::cout << "Book Name: "; 
-            std::getline(std::cin, title); // to get input with spaces
-            std::cout << "Author: ";
-            std::getline(std::cin, author);
-            std::cout << "# of Pages: ";
-            std::cin >> pages;
-            std::cout << "Rating (1-10): ";
-            std::cin >> rating;
-
-            
-            std::cout << title << std::endl; 
-            std::cout << author << std::endl;
-            std::cout << pages << std::endl;
-            std::cout << rating << std::endl;
-
-        }; 
 
         void View() {
 
@@ -90,11 +68,33 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
 
         };
 
-    private:
+    private: // nonaccesale in main
+        
+        //varibles
+        std::string user_title;
 
-    //container for user books
-    std::vector<std::string> Book = {"1", "2", "3"};
+        //data struc for saving
 
+        void Save() { // find out how to store user info about books
+            std::cout << "\nPlease enter the info of the book you want to save below." << std::endl;
+
+            //reset input 
+            std::cin.ignore();
+            std::cin.clear();
+
+            std::cout << "Book Name: "; 
+            std::getline(std::cin, title); // to get input with spaces
+            std::cout << "# of Pages: ";
+            std::cin >> pages;
+            std::cout << "Rating (1-10): ";
+            std::cin >> rating;
+
+            // to double check input
+            std::cout << "\nWhat you entered is below." << std::endl;
+            std::cout << title << std::endl; 
+            std::cout << pages << std::endl;
+            std::cout << rating << std::endl;
+        };
 };
 
 main(){
