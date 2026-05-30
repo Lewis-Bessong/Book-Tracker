@@ -58,13 +58,26 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
         }
 
         void Save() { // find out how to store user info about books
+            std::cout << "\nPlease enter the info of the book you want to save below." << std::endl;
 
-            std::cout << "Please enter the info of the book you want to save below." << std::endl;
+            //reset input 
+            std::cin.ignore();
+            std::cin.clear();
 
-            std::cout << "Book Name "; 
-            std::getline(std::cin, title); 
+            std::cout << "Book Name: "; 
+            std::getline(std::cin, title); // to get input with spaces
+            std::cout << "Author: ";
+            std::getline(std::cin, author);
+            std::cout << "# of Pages: ";
+            std::cin >> pages;
+            std::cout << "Rating (1-10): ";
+            std::cin >> rating;
+
             
             std::cout << title << std::endl; 
+            std::cout << author << std::endl;
+            std::cout << pages << std::endl;
+            std::cout << rating << std::endl;
 
         }; 
 
