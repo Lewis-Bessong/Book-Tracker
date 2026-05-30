@@ -59,9 +59,12 @@ struct BookTracker { // 'struct' to keep everythign together regardless of type
 
         void Save() { // find out how to store user info about books
 
-            //need something to save and keep data fromo user
-            //data structure might be needed to keep organize
-            //something to do with class objects 
+            std::cout << "Please enter the info of the book you want to save below." << std::endl;
+
+            std::cout << "Book Name "; 
+            std::getline(std::cin, title); 
+            
+            std::cout << title << std::endl; 
 
         }; 
 
