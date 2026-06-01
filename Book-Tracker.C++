@@ -13,33 +13,33 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
  
         void Program() { // see to make text layout better/readable. (future change to switch statements for efficeincy)
 
-            std::string mode;
+            std::string option;
 
             do { // does block of code first
 
                 //question
-                std::cout << "Please choose desired mode.\n";
+                std::cout << "Please choose an option.\n";
                 std::cout << "1. Save\n";
                 std::cout << "2. View/Change\n";
                 std::cout << "3. End" << std::endl;
 
                 //get info
-                std::cout << "\nMode ('1', '2', '3'): ";
-                std::cin >> mode;
+                std::cout << "\nOption: ";
+                std::cin >> option;
 
                 // check if valid 
-                if (mode == "1") {
+                if (option == "1") {
 
                     // Save method
                     Save();
                     // repeats conditional after save method
 
-                } else if (mode == "2") {
+                } else if (option == "2") {
 
                     View();
 
                     break;
-                } else if (mode == "3") {
+                } else if (option == "3") {
 
                     std::cout << "Goodbye." << std::endl;
                     break;
@@ -52,8 +52,8 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
                 }
 
             } while (true); // will always loop based on 'true' but 'break' within conditionals exit loop
-            
-        } 
+
+        };
 
         void Save() { // find out how to store user info about books
             std::cout << "\nPlease enter the info of the book you want to save below." << std::endl;
@@ -70,6 +70,7 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
             std::cin >> rating;
 
             // to double check input
+            std::cout << "Your Book is Saved." << std::endl;
             std::cout << "\nWhat you entered is below." << std::endl;
             std::cout << title << std::endl; 
             std::cout << pages << std::endl;
