@@ -2,7 +2,8 @@
 #include <string>
 #include <vector>
 
-struct Book { // Book class for what a book needs and 'struct' to keep everything together regardless of data type
+// Book class for what a book needs and 
+struct Book { // 'struct' to keep everything together regardless of data type
     public: 
         std::string title; 
         std::string author; 
@@ -12,7 +13,11 @@ struct Book { // Book class for what a book needs and 'struct' to keep everythin
         int rating;
 
     private: // nonaccesale in main
+
 };
+
+//container for books
+std::vector<Book> Books{}; // using vector as a dynamic array to hold instances of the class "Book".
 
 main(){
 
