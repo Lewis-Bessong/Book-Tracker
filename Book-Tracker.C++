@@ -19,23 +19,23 @@ struct Book { // 'struct' to keep everything together regardless of data type
 
 main(){
 
+    //container for books (stores/organizes data)
+    std::vector<Book> Books {}; // a dyamic array that contain objects of the class "Book"
+
+    //variable for user input
     std::string UserTitle;
 
     //instances from the class "book"
-
     Book User; //object of book class
     User.title == UserTitle;  // attributes of that object
 
+    //user input
     std::cout << "Welcome to the Book Tracker." << std::endl;
     std::cout << "What is the title of your book?" << std::endl;
     std::getline(std::cin, UserTitle); 
 
-    
-    
-    //container for books (stores/organizes data)
-    std::vector<Book> Books; // a dyamic array that contain objects of the class "Book"
-
-    
+    // putting object within container (vector)
+    Books.push_back(User); 
 
 }
 
