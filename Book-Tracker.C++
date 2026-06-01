@@ -5,6 +5,7 @@
 // Book class for what a book needs and 
 struct Book { // 'struct' to keep everything together regardless of data type
     public: 
+        //attributes (traits)
         std::string title; 
         std::string author; 
         std::string genre;  
@@ -13,16 +14,19 @@ struct Book { // 'struct' to keep everything together regardless of data type
         int rating;
 
     private: // nonaccesale in main
-
 };
 
 //container for books
-std::vector<Book> Books{}; // using vector as a dynamic array to hold instances of the class "Book".
+
 
 main(){
+    Book User; //object of class book
 
- std::cout << "Welcome to your Book Tracker." << std::endl;
+    User.title == "Harry Potter";  // attributes of that object
+    
+    std::vector<Book> Books{User}; // using vector as a dynamic array to hold instances(objects) of the class "Book".
 
+    std::cout << Books[0];
 }
 
 // saved code for later
