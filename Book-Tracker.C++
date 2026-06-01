@@ -2,12 +2,12 @@
 #include <string>
 #include <vector>
 
-struct BookTracker { // 'struct' to keep everything together regardless of type
+struct Book { // Book class for what a book needs and 'struct' to keep everything together regardless of data type
     public: 
-
         std::string title; 
-        std::string author; // used later
-        std::string genre; // used later 
+        std::string author; 
+        std::string genre;  
+        std::string progress; 
         int pages;
         int rating;
 
@@ -15,8 +15,6 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
 };
 
 main(){
-
- BookTracker Tracker;
 
  std::cout << "Welcome to your Book Tracker." << std::endl;
 
