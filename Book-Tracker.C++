@@ -25,11 +25,17 @@ main(){
 
     Book User; //object of book class
     User.title == UserTitle;  // attributes of that object
+
+    std::cout << "Welcome to the Book Tracker." << std::endl;
+    std::cout << "What is the title of your book?" << std::endl;
+    std::getline(std::cin, UserTitle); 
+
+    
     
     //container for books (stores/organizes data)
-    std::vector<Book> Books{User}; // using vector as a dynamic array to hold instances(objects) of the class "Book".
+    std::vector<Book> Books; // a dyamic array that contain objects of the class "Book"
 
-
+    
 
 }
 
