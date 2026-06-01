@@ -16,17 +16,21 @@ struct Book { // 'struct' to keep everything together regardless of data type
     private: // nonaccesale in main
 };
 
-//container for books
-
 
 main(){
-    Book User; //object of class book
 
-    User.title == "Harry Potter";  // attributes of that object
+    std::string UserTitle;
+
+    //instances from the class "book"
+
+    Book User; //object of book class
+    User.title == UserTitle;  // attributes of that object
     
+    //container for books (stores/organizes data)
     std::vector<Book> Books{User}; // using vector as a dynamic array to hold instances(objects) of the class "Book".
 
-    std::cout << Books[0];
+
+
 }
 
 // saved code for later
