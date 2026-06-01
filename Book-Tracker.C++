@@ -27,11 +27,13 @@ main(){
 
     //instances from the class "book"
     Book User; //object of book class
-    User.title == UserTitle;  // attributes of that object
+    User.title = UserTitle;  // attributes of that object
 
     //user input
     std::cout << "Welcome to the Book Tracker." << std::endl;
     std::cout << "What is the title of your book?" << std::endl;
+    std::cin.ignore();
+    std::cin.clear();
     std::getline(std::cin, UserTitle); 
 
     // putting object within container (vector)
