@@ -35,7 +35,8 @@ main(){
     std::getline(std::cin, UserTitle); 
 
     // putting object within container (vector)
-    Books.push_back(User); 
+    Books.push_back(User);  // add object to container 
+    std::cout << "You put : " << Books[0].title << std::endl; // accessing specsific object and specific attribute
 
 }
 
