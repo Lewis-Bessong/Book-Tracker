@@ -32,6 +32,7 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
 
                     // Save method
                     Save();
+                    break;
                     // repeats conditional after save method
 
                 } else if (option == "2") {
@@ -71,11 +72,10 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
 
             // to double check input
             std::cout << "Your Book is Saved." << std::endl;
-            std::cout << "\nWhat you entered is below." << std::endl;
-            std::cout << title << std::endl; 
-            std::cout << pages << std::endl;
-            std::cout << rating << std::endl;
-            std::cout << "\n"; 
+            std::cout << "These were the tiles of your last saved books." << std::endl;
+
+            Storage();
+            
         };
         
         void View() {
@@ -89,9 +89,16 @@ struct BookTracker { // 'struct' to keep everything together regardless of type
 
     private: // nonaccesale in main
 
-        //varibles 
-
         //data struc for saving
+        std::vector<std::string> titles {title};
+
+        //method
+        void Storage() {
+
+            std::cout << titles[0] << std::endl;
+
+        };
+
 
 };
 
