@@ -24,16 +24,28 @@ main(){
 
     //variable for user input
     std::string UserTitle;
+    std::string UserAuthor;
+    std::string UserGenre;
+    std::string UserProgress;
 
     //user input
     std::cout << "Welcome to the Book Tracker." << std::endl;
-    std::cout << "What is the title of your book?" << std::endl;
+    std::cout << "Book title: ";
     std::cin.clear();
     std::getline(std::cin, UserTitle); 
+    std::cout << "Author: ";
+    std::getline(std::cin, UserAuthor);
+    
 
     //instances from the class "book"
     Book User; //object of book class
-    User.title = UserTitle;  // attributes of that object
+     // attributes of that object
+    User.title = UserTitle;
+    User.author = UserAuthor;
+    User.genre = UserGenre;
+    User.progress = UserProgress;
+
+    
 
     // putting object within container (vector)
     Books.push_back(User);  // add object to container 
