@@ -36,35 +36,44 @@ main(){
 
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
-        // Starting menu for user (seeing what options are available)
+
+        // Starting menu
         Menu();
 
         if (!(std::cin >> MenuOption)) { // conditional for non-number input
 
             std::cout << "WRONG INPUT. (Enter a Number)" << std:: endl;
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cin.clear(); // resets fail 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
 
             continue; // still goes to the switch statment 
         }
         
-        switch (MenuOption) {
+        switch (MenuOption) { // switch statments for what user inputs
             case 1:
+                // add instances from the class 
+                // figure out loop where it keeps saving (putting objects in vector) each time user enteres '1'
+
                 std::cout << "Saving..." << std::endl;
                 break;
             case 2:
+                // add conditionals for what book user wants to see
+                // add indexed elements from vector
+
                 std::cout << "Viewing..." << std::endl;
                 break;
             case 3:
+                // finished
                 std::cout << "Goodbye!" << std::endl;
                 std::exit(0); // end program immediatly with success
                 break;
             default:
+                //finished
                 std::cout << "WRONG INPUT." << std::endl;
 
         };
 
-    } while (MenuOption != 1 && MenuOption != 2 && MenuOption != 3); // why does it work when its in false
+    } while (MenuOption != 1 && MenuOption != 2 && MenuOption != 3); // do block will be repeated if this condition happens
 
 }
 
