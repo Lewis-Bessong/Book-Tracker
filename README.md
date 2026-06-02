@@ -4,15 +4,16 @@ The Book Tracker is a special tracker that any book worm can use to save their f
 ## Uses
 ### Current Fuctions
 - Saving Books
+- Viewing Saved Books
+- Stopping Program
 
 ### Future Functions
 - Book wishlist
 - Book recomendation section
-- Viewing saved books
+- Book Shop Reccomendations
+- Filtered Saved Book Libarary(Favorites, Scary, Seasonal, etc.)
 
 ## Instructions
-1. User chooses mode for tracker (Viewing, Saving, Changing, etc)
+1. User selections options of what the program can do from menu. (Saving, Viewing, Stopping)
 2. User interacts with mode that was selected (Guidance on what to do within program will be given)
-3. User gets option to continue or stop program
-
-# Book Tracker Resources
+3. User is sent to the menu again and user chooses what they will do, wether to contintue adding or stop the program.
