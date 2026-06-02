@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-// Book class for what a book needs and 
+// Book class for what a book needs 
 struct Book { // 'struct' to keep everything together regardless of data type
     public: 
         //attributes (traits)
@@ -12,11 +12,17 @@ struct Book { // 'struct' to keep everything together regardless of data type
         std::string progress; 
         int pages;
         int rating;
-        
+
     private: // nonaccesale in main
 };
 
-    
+void Menu() { // Starting menu for user (Seeing what the program can do) 
+    std::cout << "Welcome to your Book Tracker.\n";
+    std::cout << "-----------------------------\n";
+    std::cout << "1. Save New Book\n";
+    std::cout << "2. View Saved Book\n";
+    std::cout << "3. Stop Book Tracker" << std::endl;
+}
 
 
 main(){
@@ -24,9 +30,8 @@ main(){
     //container for books (stores/organizes data)
     std::vector<Book> Books; //contains objects from the "Book" class
 
+    Menu();
 
-
-    
 }
 
 /*
