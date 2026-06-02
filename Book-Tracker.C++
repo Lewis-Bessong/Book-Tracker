@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 
 // Book class for what a book needs 
 struct Book { // 'struct' to keep everything together regardless of data type
@@ -18,11 +19,12 @@ struct Book { // 'struct' to keep everything together regardless of data type
 
 void Menu() { // Starting menu for user (Seeing what the program can do)  
 
-    std::cout << "Welcome to your Book Tracker.\n";
+    std::cout << "Book Tracker Menu.\n";
     std::cout << "-----------------------------\n";
     std::cout << "1. Save New Book\n";
     std::cout << "2. View Saved Book\n";
     std::cout << "3. Stop Book Tracker" << std::endl;
+    std::cout << "Option: "; // where input will take place
 }
 
 main(){
@@ -34,11 +36,17 @@ main(){
 
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
-
         // Starting menu for user (seeing what options are available)
         Menu();
-        std::cout << "Option: ";
-        std::cin >> MenuOption;
+
+        if (!(std::cin >> MenuOption)) { // conditional for non-number input
+
+            std::cout << "WRONG INPUT. (Enter a Number)" << std:: endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            continue; // still goes to the switch statment 
+        }
         
         switch (MenuOption) {
             case 1:
@@ -49,15 +57,14 @@ main(){
                 break;
             case 3:
                 std::cout << "Goodbye!" << std::endl;
+                std::exit(0); // end program immediatly with success
                 break;
-                std::abort();
             default:
-                do{} while (MenuOption != 1 || 2 || 3);
                 std::cout << "WRONG INPUT." << std::endl;
-                break;
+
         };
 
-    } while (true); // why does it work when its in false
+    } while (MenuOption != 1 && MenuOption != 2 && MenuOption != 3); // why does it work when its in false
 
 }
 
