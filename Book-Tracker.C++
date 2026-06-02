@@ -32,13 +32,14 @@ main(){
     //container for books (stores/organizes data)
     std::vector<Book> Books; //contains objects from the "Book" class
 
-    // Menu output, user input, and conditionals (switch statments)
+    // Looped Menu output, user input, and conditionals (switch statments)
     do {
 
+        // Starting menu for user (seeing what options are available)
         Menu();
         std::cout << "Option: ";
         std::cin >> MenuOption;
-
+        
         switch (MenuOption) {
             case 1:
                 std::cout << "Saving..." << std::endl;
@@ -48,13 +49,15 @@ main(){
                 break;
             case 3:
                 std::cout << "Goodbye!" << std::endl;
-                std::abort();
                 break;
+                std::abort();
             default:
+                do{} while (MenuOption != 1 || 2 || 3);
                 std::cout << "WRONG INPUT." << std::endl;
+                break;
         };
 
-    } while (false); // why does it work when its in false
+    } while (true); // why does it work when its in false
 
 }
 
