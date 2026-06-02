@@ -25,24 +25,21 @@ main(){
     //variable for user input
     std::string UserTitle;
 
+    //user input
+    std::cout << "Welcome to the Book Tracker." << std::endl;
+    std::cout << "What is the title of your book?" << std::endl;
+    std::cin.clear();
+    std::getline(std::cin, UserTitle); 
+
     //instances from the class "book"
     Book User; //object of book class
     User.title = UserTitle;  // attributes of that object
 
-    //add other objects w/ attributes and add those to vector
-
-    //user input
-    std::cout << "Welcome to the Book Tracker." << std::endl;
-    std::cout << "What is the title of your book?" << std::endl;
-    std::cin.ignore();
-    std::cin.clear();
-    std::getline(std::cin, UserTitle); 
-
     // putting object within container (vector)
     Books.push_back(User);  // add object to container 
 
-    // figure out why this vector accessor isnt showing on output
-    std::cout << "You put : " << Books[0].title << std::endl; // accessing specsific object and specific attribute
+    
+    std::cout << "You put: " << Books[0].title << std::endl; // accessing specsific object and specific attribute
 
 }
 
