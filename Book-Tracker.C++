@@ -4,7 +4,7 @@
 #include <limits>
 
 // Book class for what a book needs 
-struct Book { // 'struct' to keep everything together regardless of data type
+struct BookBlueprint { // 'struct' to keep everything together regardless of data type
     public: 
         //attributes (traits)
         std::string title; 
@@ -13,6 +13,17 @@ struct Book { // 'struct' to keep everything together regardless of data type
         std::string progress; 
         int pages;
         int rating;
+
+        void SaveBook() {
+
+            std::cin.clear();
+            std::cin.ignore();
+            std::cout << "Book Title: ";
+            std::getline(std::cin, title);
+            std::cout << "Book Author: ";
+            std::getline(std::cin, author);         
+
+        };
 
     private: // nonaccesale in main
 };
@@ -33,10 +44,10 @@ main(){
     int MenuOption;
 
     //container for books (stores/organizes data)
-    std::vector<Book> Books; //contains objects from the "Book" class
+    std::vector<BookBlueprint> Books; //contains objects from the "Book" class
 
     //Object
-    Book Save;
+    BookBlueprint Book;
 
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
@@ -57,12 +68,14 @@ main(){
             case 1:
 
                 do {
-                    
 
-                } while (MenuOption = 1);
+                    Book.SaveBook();
+
+                    std:: cout << "Title: " << Book.title << std::endl;
 
 
-                
+                } while ();
+ 
                 break;
             case 2:
                 // add conditionals for what book user wants to see
