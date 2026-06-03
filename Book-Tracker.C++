@@ -27,12 +27,16 @@ void Menu() { // Starting menu for user (Seeing what the program can do)
     std::cout << "Option: "; // where input will take place
 }
 
+
 main(){
     // variables
     int MenuOption;
 
     //container for books (stores/organizes data)
     std::vector<Book> Books; //contains objects from the "Book" class
+
+    //Object
+    Book Save;
 
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
@@ -51,10 +55,14 @@ main(){
         
         switch (MenuOption) { // switch statments for what user inputs
             case 1:
-                // add instances from the class 
-                // figure out loop where it keeps saving (putting objects in vector) each time user enteres '1'
 
-                std::cout << "Saving..." << std::endl;
+                do {
+                    
+
+                } while (MenuOption = 1);
+
+
+                
                 break;
             case 2:
                 // add conditionals for what book user wants to see
