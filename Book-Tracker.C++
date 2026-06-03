@@ -25,6 +25,12 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
         };
 
+        void DisplayBook() {
+
+            std::cout << "Title: " << title << "\n";
+            std::cout << "Authro: " << author << std::endl;
+        };
+
     private: // nonaccesale in main
 };
 
@@ -67,14 +73,21 @@ main(){
         switch (MenuOption) { // switch statments for what user inputs
             case 1:
 
+                // will first make user save a book while they are in this case 
                 do {
 
                     Book.SaveBook();
 
-                    std:: cout << "Title: " << Book.title << std::endl;
+                    std::cout << "Title: " << Book.title << std::endl;
+                    std::cout << "Author: " << Book.author << std::endl;
+
+                    Books.push_back(Book); 
+
+                    std::cout << "This is what you put for the save." << std::endl;
+                    Books[0].DisplayBook(); // displays what user put from that specific book
 
 
-                } while ();
+                } while (false);
  
                 break;
             case 2:
