@@ -73,24 +73,24 @@ main(){
         switch (MenuOption) { // switch statments for what user inputs
             case 1:
 
-                // will first make user save a book while they are in this case 
                 do {
-
+                    // User inputs info about saved book
                     Book.SaveBook();
 
-                    std::cout << "Title: " << Book.title << std::endl;
-                    std::cout << "Author: " << Book.author << std::endl;
-
+                    // saved book gets saved within the vector
                     Books.push_back(Book); 
 
-                    std::cout << "This is what you put for the save." << std::endl;
-                    Books[0].DisplayBook(); // displays what user put from that specific book
+                    // User decision for whats next
+                    std::cout << "Book Saved.\n";
+                    std::cout << "------------\n";
+                    std::cout << "Save another book? (Y/N): ";
 
-                    
 
+
+                    //
 
                 } while (false);
- 
+   
                 break;
             case 2:
                 // add conditionals for what book user wants to see
