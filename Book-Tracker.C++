@@ -14,7 +14,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
         int pages;
         int rating;
 
-        void SaveBook() {
+        void SaveBook() { // what user will type info into
 
             std::cin.clear();
             std::cin.ignore();
@@ -25,7 +25,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
         };
 
-        void DisplayBook() {
+        void DisplayBook() { // used to show what user has typed
 
             std::cout << "Title: " << title << "\n";
             std::cout << "Authro: " << author << std::endl;
@@ -85,6 +85,8 @@ main(){
 
                     std::cout << "This is what you put for the save." << std::endl;
                     Books[0].DisplayBook(); // displays what user put from that specific book
+
+                    
 
 
                 } while (false);
