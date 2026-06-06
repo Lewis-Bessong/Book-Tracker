@@ -100,7 +100,7 @@ main(){
                         std::cout << "Going back to menu..." << std::endl;
                         // find out how to go back to menu without stopping whole program and going to another case
                         //has something to do with breaks, continues, and posibbly loops
-                        break;
+                        continue;
                     } else {
                         std::cout << "INVALID INPUT. (only single letter)" << std::endl;
                         // After this code, the program automatically goes to save first
