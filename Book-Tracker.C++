@@ -75,7 +75,9 @@ main(){
             case 1:
 
                 // Save should most likely be outside of loop 
+                
 
+                /*
                 do {
                     // User inputs info about saved book
                     Book.SaveBook();
@@ -108,6 +110,7 @@ main(){
                     }
 
                 } while (SaveOption != "Y" && SaveOption != "y" && SaveOption != "N" && SaveOption != "n");
+                */
    
                 // posibbly something to do here for lopping back to menu 
                 break;
