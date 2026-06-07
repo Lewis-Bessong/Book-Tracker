@@ -33,52 +33,11 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
         };
 
         void SaveBook() {
-
-            std::vector<BookBlueprint> Books;
-            static std::string Book;
-            
-
-            do {
-                    // User inputs info about saved book
-                    BookInput();
-
-                    // saved book gets saved within the vector
-                    Books.push_back(Book); 
-
-                    // User decision for whats next
-                    std::cin.clear();
-                    std::cout << "Book Saved.\n";
-                    std::cout << "------------\n";
-                    std::cout << "Save another book? (Y/N): ";
-                    std::cin >> SaveOption;
-
-                    //conditionals
-                    if (SaveOption == "Y" || SaveOption == "y") {
-
-                        SaveBook();
-
-                        // in progress
-                    } else if (SaveOption == "N" || SaveOption == "n") {
-
-                        std::cout << "Going back to menu..." << std::endl;
-                        // find out how to go back to menu without stopping whole program and going to another case
-                        //has something to do with breaks, continues, and posibbly loops
-                    } else {
-                        std::cout << "INVALID INPUT. (only single letter)" << std::endl;
-                        // After this code, the program automatically goes to save first
-                        // find out how to go back to the question instead
-                        // should also be invalid when they input number
-                    }
-
-                } while (SaveOption != "Y" && SaveOption != "y" && SaveOption != "N" && SaveOption != "n");
-
+  
         };
 
         
     private: // nonaccesale in main
-    std::vector<BookBlueprint> Books;
-
-    static std::string Book; 
     
     
 };
@@ -128,44 +87,25 @@ main(){
             // user chooses to save 
             case 1: 
 
-                // Save should most likely be outside of loop 
+                // User inputs info about saved book
+                Book.BookInput();
 
-                Book.SaveBook();
-                /*
+                // saved book gets saved within the vector
+                Books.push_back(Book); 
+
+                // User decision for whats next
+                std::cin.clear();
+                std::cout << "Book Saved.\n";
+                std::cout << "------------\n";
+                std::cout << "Save another book? (Y/N): ";
+                std::cin >> SaveOption;
+                
                 do {
-                    // User inputs info about saved book
-                    Book.BookInput();
 
-                    // saved book gets saved within the vector
-                    Books.push_back(Book); 
-
-                    // User decision for whats next
-                    std::cin.clear();
-                    std::cout << "Book Saved.\n";
-                    std::cout << "------------\n";
-                    std::cout << "Save another book? (Y/N): ";
-                    std::cin >> SaveOption;
-
-                    //conditionals
-                    if (SaveOption == "Y" || SaveOption == "y") {
-
-                        Book.SaveBook();
-
-                        // in progress
-                    } else if (SaveOption == "N" || SaveOption == "n") {
-
-                        std::cout << "Going back to menu..." << std::endl;
-                        // find out how to go back to menu without stopping whole program and going to another case
-                        //has something to do with breaks, continues, and posibbly loops
-                    } else {
-                        std::cout << "INVALID INPUT. (only single letter)" << std::endl;
-                        // After this code, the program automatically goes to save first
-                        // find out how to go back to the question instead
-                        // should also be invalid when they input number
-                    }
-
+                    
+                
                 } while (SaveOption != "Y" && SaveOption != "y" && SaveOption != "N" && SaveOption != "n");
-                */
+                
                 // posibbly something to do here for lopping back to menu 
 
             case 2: // user chooses to view 
