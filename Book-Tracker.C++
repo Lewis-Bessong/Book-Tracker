@@ -32,13 +32,6 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Authro: " << author << std::endl;
         };
 
-        void SaveBook() {
-
-            BookInput();
-
-            Books.push_back(Book);
-            
-        }
 
     private: // nonaccesale in main
     std::vector<BookBlueprint> Books;
@@ -55,8 +48,8 @@ void Menu() { // Starting menu for user (Seeing what the program can do)
     std::cout << "Option: "; // where input will take place
 }
 
+void Resources() {
 
-main(){
     // variables
     int MenuOption;
     std::string SaveOption;
@@ -66,12 +59,22 @@ main(){
 
     //Object
     BookBlueprint Book;
+}
+
+
+main(){
+    
+    Resources();
+
 
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
 
+        Resources();
+
         // Starting menu
         Menu();
+        
 
         if (!(std::cin >> MenuOption)) { // conditional for non-number input
 
