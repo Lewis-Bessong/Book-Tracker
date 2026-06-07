@@ -32,10 +32,55 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Authro: " << author << std::endl;
         };
 
+        void SaveBook() {
 
+            std::vector<BookBlueprint> Books;
+            static std::string Book;
+            
+
+            do {
+                    // User inputs info about saved book
+                    BookInput();
+
+                    // saved book gets saved within the vector
+                    Books.push_back(Book); 
+
+                    // User decision for whats next
+                    std::cin.clear();
+                    std::cout << "Book Saved.\n";
+                    std::cout << "------------\n";
+                    std::cout << "Save another book? (Y/N): ";
+                    std::cin >> SaveOption;
+
+                    //conditionals
+                    if (SaveOption == "Y" || SaveOption == "y") {
+
+                        SaveBook();
+
+                        // in progress
+                    } else if (SaveOption == "N" || SaveOption == "n") {
+
+                        std::cout << "Going back to menu..." << std::endl;
+                        // find out how to go back to menu without stopping whole program and going to another case
+                        //has something to do with breaks, continues, and posibbly loops
+                    } else {
+                        std::cout << "INVALID INPUT. (only single letter)" << std::endl;
+                        // After this code, the program automatically goes to save first
+                        // find out how to go back to the question instead
+                        // should also be invalid when they input number
+                    }
+
+                } while (SaveOption != "Y" && SaveOption != "y" && SaveOption != "N" && SaveOption != "n");
+
+        };
+
+        
     private: // nonaccesale in main
     std::vector<BookBlueprint> Books;
 
+    static std::string Book; 
+    
+    
 };
 
 void Menu() { // Starting menu for user (Seeing what the program can do)  
@@ -48,8 +93,9 @@ void Menu() { // Starting menu for user (Seeing what the program can do)
     std::cout << "Option: "; // where input will take place
 }
 
-void Resources() {
 
+main(){
+    
     // variables
     int MenuOption;
     std::string SaveOption;
@@ -59,24 +105,15 @@ void Resources() {
 
     //Object
     BookBlueprint Book;
-}
-
-
-main(){
-    
-    Resources();
-
 
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
 
-        Resources();
-
         // Starting menu
         Menu();
         
-
-        if (!(std::cin >> MenuOption)) { // conditional for non-number input
+        // checks for non-number input
+        if (!(std::cin >> MenuOption)) { 
 
             std::cout << "WRONG INPUT. (Enter a Number)" << std:: endl;
             std::cin.clear(); // resets fail 
@@ -85,11 +122,16 @@ main(){
             continue; // still goes to the switch statment 
         }
         
-        switch (MenuOption) { // switch statments for what user inputs
-            case 1:
+        // switch statments for what user inputs from menu
+        switch (MenuOption) { 
+
+            // user chooses to save 
+            case 1: 
 
                 // Save should most likely be outside of loop 
 
+                Book.SaveBook();
+                /*
                 do {
                     // User inputs info about saved book
                     Book.BookInput();
@@ -107,7 +149,8 @@ main(){
                     //conditionals
                     if (SaveOption == "Y" || SaveOption == "y") {
 
-                        std::cout << "Saving...." << std::endl;
+                        Book.SaveBook();
+
                         // in progress
                     } else if (SaveOption == "N" || SaveOption == "n") {
 
@@ -122,21 +165,21 @@ main(){
                     }
 
                 } while (SaveOption != "Y" && SaveOption != "y" && SaveOption != "N" && SaveOption != "n");
-   
+                */
                 // posibbly something to do here for lopping back to menu 
 
-            case 2:
+            case 2: // user chooses to view 
                 // add conditionals for what book user wants to see
                 // add indexed elements from vector
 
                 std::cout << "Viewing..." << std::endl;
                 break;
-            case 3:
+            case 3: // user chooses to end program
                 // finished
                 std::cout << "Goodbye!" << std::endl;
                 std::exit(0); // end program immediatly with success
                 break;
-            default:
+            default: // user puts something else than 1, 2, 3
                 //finished
                 std::cout << "WRONG INPUT." << std::endl;
 
