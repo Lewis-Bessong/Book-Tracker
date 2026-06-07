@@ -13,8 +13,9 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
         std::string progress; 
         int pages;
         int rating;
+        std::string SaveOption; // for user input towards save method
 
-        void SaveBook() { // what user will type info into
+        void BookInput() { // what user will type info into
 
             std::cin.clear();
             std::cin.ignore();
@@ -31,7 +32,17 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Authro: " << author << std::endl;
         };
 
+        void SaveBook() {
+
+            BookInput();
+
+            Books.push_back(Book);
+            
+        }
+
     private: // nonaccesale in main
+    std::vector<BookBlueprint> Books;
+
 };
 
 void Menu() { // Starting menu for user (Seeing what the program can do)  
@@ -78,7 +89,7 @@ main(){
 
                 do {
                     // User inputs info about saved book
-                    Book.SaveBook();
+                    Book.BookInput();
 
                     // saved book gets saved within the vector
                     Books.push_back(Book); 
