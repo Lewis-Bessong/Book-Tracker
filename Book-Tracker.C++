@@ -52,6 +52,18 @@ void Menu() { // Starting menu for user (Seeing what the program can do)
     std::cout << "Option: "; // where input will take place
 }
 
+void SaveMode() {
+
+    std::cin.clear();
+    std::cout << "Book Saved.\n";
+    std::cout << "------------\n";
+    std::cout << "Save another book?\n";
+    std::cout << "1. Yes\n";
+    std::cout << "2. No" << std::endl;
+    std::cout << "Option: ";
+
+}
+
 main(){
     
     // variables
@@ -92,32 +104,45 @@ main(){
                 // saved book gets saved within the vector
                 Books.push_back(Book); 
 
-                // User decision for whats next
-                std::cin.clear();
-                std::cout << "Book Saved.\n";
-                std::cout << "------------\n";
-                std::cout << "Save another book?\n";
-                std::cout << "1. Yes\n";
-                std::cout << "2. No" << std::endl;
-                std::cout << "Option: ";
-                std::cin >> SaveOption;
+                // User decision to continue saving books 
+
+
                 
-                switch (SaveOption) {
-                    case 1: 
+                do {
 
-                        std::cout << "Saving..." << std::endl;
-                        break;
-                    case 2: 
-
-                        std::cout << "Going back to Menu..." << std::endl;
-                        break;
-                    default:
-                        std::cout << "INVALID INPUT" << std::endl;
+                    SaveMode();
+                    std::cin >> SaveOption;
 
 
-                }
+                    if (!(std::cin >> SaveOption)) { // check for non number input
 
+                        std::cout << "WRONG INPUT (ENTER NUMBER)" << std::endl;
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
 
+                        continue;
+                    }
+
+                    switch (SaveOption) {
+                        case 1: 
+
+                            std::cout << "Saving..." << std::endl;
+
+                            Book.BookInput();
+                            Books.push_back(Book);
+                            
+                            break;
+                        case 2: 
+
+                            std::cout << "Going back to Menu..." << std::endl;
+                            break;
+                        default:
+
+                            std::cout << "INVALID INPUT" << std::endl;
+                    }
+
+                } while (SaveOption != 1 && SaveOption != 2);
+            
 
                 // posibbly something to do here for lopping back to menu 
                 continue;
