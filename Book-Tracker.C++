@@ -122,9 +122,16 @@ main(){
 
                     while (SaveOption = 1) {
 
-                        Book.BookInput();
-                        Books.push_back(Book);
+                        Book.BookInput(); // book info 
+                        Books.push_back(Book); // book info gets stored
 
+                        SaveMode(); // ask to save
+                        std::cin >> SaveOption;
+
+                        if (SaveOption = 2) {
+
+                            break;
+                        }     
                     }
                     
 
