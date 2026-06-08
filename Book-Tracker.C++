@@ -105,7 +105,6 @@ main(){
                 Books.push_back(Book); 
 
                 // User decision to continue saving books 
-     
                 do {
 
                     SaveMode();
@@ -120,6 +119,7 @@ main(){
                     }
 
 
+                    // continues looping the save options
                     while (SaveOption = 1) {
 
                         Book.BookInput(); // book info 
@@ -128,13 +128,15 @@ main(){
                         SaveMode(); // ask to save
                         std::cin >> SaveOption;
 
+                        // loop ends if this happens
                         if (SaveOption = 2) {
 
                             break;
                         }     
                     }
                     
-
+                    //need to go back to menu here
+                    // print book info here to check if books are actually being stored
 
                 } while (SaveOption != 1 && SaveOption != 2);
             
@@ -143,11 +145,11 @@ main(){
                 continue;
 
             case 2: // user chooses to view 
+
                 // add conditionals for what book user wants to see
                 // add indexed elements from vector
-
                 std::cout << "Viewing..." << std::endl;
-                break;
+                break; 
             case 3: // user chooses to end program
                 // finished
                 std::cout << "Goodbye!" << std::endl;
