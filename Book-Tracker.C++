@@ -105,16 +105,12 @@ main(){
                 Books.push_back(Book); 
 
                 // User decision to continue saving books 
-
-
-                
+     
                 do {
 
                     SaveMode();
-                    std::cin >> SaveOption;
 
-
-                    if (!(std::cin >> SaveOption)) { // check for non number input
+                    if (!(std::cin >> SaveOption)) { // check for non number input 
 
                         std::cout << "WRONG INPUT (ENTER NUMBER)" << std::endl;
                         std::cin.clear();
@@ -123,23 +119,15 @@ main(){
                         continue;
                     }
 
-                    switch (SaveOption) {
-                        case 1: 
 
-                            std::cout << "Saving..." << std::endl;
+                    while (SaveOption = 1) {
 
-                            Book.BookInput();
-                            Books.push_back(Book);
-                            
-                            break;
-                        case 2: 
+                        Book.BookInput();
+                        Books.push_back(Book);
 
-                            std::cout << "Going back to Menu..." << std::endl;
-                            break;
-                        default:
-
-                            std::cout << "INVALID INPUT" << std::endl;
                     }
+                    
+
 
                 } while (SaveOption != 1 && SaveOption != 2);
             
