@@ -52,19 +52,18 @@ void Menu() { // Starting menu for user (Seeing what the program can do)
     std::cout << "Option: "; // where input will take place
 }
 
-
 main(){
     
     // variables
     int MenuOption;
-    std::string SaveOption;
+    int SaveOption;
 
     //container for books (stores/organizes data)
     std::vector<BookBlueprint> Books; //contains objects from the "Book" class
 
     //Object
     BookBlueprint Book;
-
+    
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
 
@@ -97,16 +96,31 @@ main(){
                 std::cin.clear();
                 std::cout << "Book Saved.\n";
                 std::cout << "------------\n";
-                std::cout << "Save another book? (Y/N): ";
+                std::cout << "Save another book?\n";
+                std::cout << "1. Yes\n";
+                std::cout << "2. No" << std::endl;
+                std::cout << "Option: ";
                 std::cin >> SaveOption;
                 
-                do {
+                switch (SaveOption) {
+                    case 1: 
 
-                    
-                
-                } while (SaveOption != "Y" && SaveOption != "y" && SaveOption != "N" && SaveOption != "n");
-                
+                        std::cout << "Saving..." << std::endl;
+                        break;
+                    case 2: 
+
+                        std::cout << "Going back to Menu..." << std::endl;
+                        break;
+                    default:
+                        std::cout << "INVALID INPUT" << std::endl;
+
+
+                }
+
+
+
                 // posibbly something to do here for lopping back to menu 
+                continue;
 
             case 2: // user chooses to view 
                 // add conditionals for what book user wants to see
