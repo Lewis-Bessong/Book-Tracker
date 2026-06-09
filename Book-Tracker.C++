@@ -107,7 +107,7 @@ main(){
                 // User decision to continue saving books 
                 do {
 
-                    SaveMode();
+                    SaveMode(); // if they want to save again
 
                     if (!(std::cin >> SaveOption)) { // check for non number input 
 
@@ -118,25 +118,35 @@ main(){
                         continue;
                     }
 
+                    if (SaveOption = 1) {
 
-                    // continues looping the save options
-                    while (SaveOption = 1) {
+                        while (SaveOption = 1) {
 
-                        Book.BookInput(); // book info 
-                        Books.push_back(Book); // book info gets stored
+                            Book.BookInput(); // book info 
+                            Books.push_back(Book); // book info gets stored
 
-                        SaveMode(); // ask to save
-                        std::cin >> SaveOption;
+                            SaveMode(); // ask to save
+                            std::cin >> SaveOption;
 
-                        // loop ends if this happens
-                        if (SaveOption = 2) {
+                            // loop ends if this happens
+                            if (SaveOption = 2) {
 
-                            break;
-                        }     
+                                break;
+                            }     
+                        }
+                        
+                        break;
+                    } else if (SaveOption = 2) {
+
+                        break;
+                    } else {
+
+                        std::cout << "WRONG INPUT" << std::endl;
                     }
                     
                     //need to go back to menu here
                     // print book info here to check if books are actually being stored
+                    // need conditional for wrong numebr inputted
 
                 } while (SaveOption != 1 && SaveOption != 2);
             
