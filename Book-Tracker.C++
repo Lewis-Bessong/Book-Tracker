@@ -118,38 +118,20 @@ main(){
                         continue;
                     }
 
-                    if (SaveOption == 1) {
 
-                        while (SaveOption == 1) {
+                    while (SaveOption == 1) {
 
-                            Book.BookInput(); // book info 
-                            Books.push_back(Book); // book info gets stored
+                        Book.BookInput(); // book info 
+                        Books.push_back(Book); // book info gets stored
 
-                            do {
-                                SaveMode(); // ask to save
+                        do {
 
-                                if (!(std::cin >> SaveOption)) { // check for non number input 
-
-                                    std::cout << "WRONG INPUT (ENTER NUMBER)" << std::endl;
-                                    std::cin.clear();
-                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
-
-                                 continue;
-                                }
-
-                                // conditional fro while loop
-
-                                if (SaveOption == 2) {
-
-                                    break;
-                                }  
-
-                            } while (SaveOption != 1 && SaveOption != 2);
-
-                            break;
-                        }
+                            SaveMode();
+                            
+                        } while (SaveOption != 1 && SaveOption != 2);
                         
-                    } else if (SaveOption == 2) {
+
+                    } if (SaveOption == 2) {
 
                         break;
                     } else {
