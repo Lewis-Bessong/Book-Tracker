@@ -118,25 +118,38 @@ main(){
                         continue;
                     }
 
-                    if (SaveOption = 1) {
+                    if (SaveOption == 1) {
 
-                        while (SaveOption = 1) {
+                        while (SaveOption == 1) {
 
                             Book.BookInput(); // book info 
                             Books.push_back(Book); // book info gets stored
 
-                            SaveMode(); // ask to save
-                            std::cin >> SaveOption;
+                            do {
+                                SaveMode(); // ask to save
 
-                            // loop ends if this happens
-                            if (SaveOption = 2) {
+                                if (!(std::cin >> SaveOption)) { // check for non number input 
 
-                                break;
-                            }     
+                                    std::cout << "WRONG INPUT (ENTER NUMBER)" << std::endl;
+                                    std::cin.clear();
+                                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
+
+                                 continue;
+                                }
+
+                                // conditional fro while loop
+
+                                if (SaveOption == 2) {
+
+                                    break;
+                                }  
+
+                            } while (SaveOption != 1 && SaveOption != 2);
+
+                            break;
                         }
                         
-                        break;
-                    } else if (SaveOption = 2) {
+                    } else if (SaveOption == 2) {
 
                         break;
                     } else {
@@ -147,6 +160,7 @@ main(){
                     //need to go back to menu here
                     // print book info here to check if books are actually being stored
                     // need conditional for wrong numebr inputted
+                    // after user types in wrong input it still says 'Book Saved' due to function calling
 
                 } while (SaveOption != 1 && SaveOption != 2);
             
