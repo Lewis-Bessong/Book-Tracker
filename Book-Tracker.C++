@@ -160,6 +160,7 @@ main(){
 
                 } while (SaveOption != 1 && SaveOption != 2);
 
+                // just checking if its actually saving thier books
                 for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
 
                     std::cout << "Title: " << Books[i].title << std::endl; 
@@ -171,12 +172,9 @@ main(){
 
             case 2: // user chooses to view 
 
-            
-                for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
+                // most likely just print out all of what user has saved
 
-                    std::cout << "Title: " << Books[i].title << std::endl; 
-                    std::cout << "Author: " << Books[i].author << std::endl;
-                }
+                //future plans to edit books and so on
 
                 
                 break; 
@@ -194,11 +192,3 @@ main(){
     } while (MenuOption != 1 && MenuOption != 2 && MenuOption != 3); // do block will be repeated if this condition happens
 
 }
-
-/*
-figure out List: 
-
-. find out how after a user input data within 1 object, you go to the next object to save and save it within vector
-. 
-
-*/
