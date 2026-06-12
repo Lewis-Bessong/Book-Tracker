@@ -136,6 +136,12 @@ main(){
                             if (SaveOption == 2) {
 
                                 break;
+                            } else if (SaveOption == 1) {
+
+                                Book.BookInput(); //input
+                                Books.push_back(Book); //store
+
+                                continue;
                             } else {
 
                                 std::cout << "WRONG INPUT" << std::endl;
