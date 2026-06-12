@@ -98,11 +98,8 @@ main(){
             // user chooses to save 
             case 1: 
 
-                // User inputs info about saved book
-                Book.BookInput();
-
-                // saved book gets saved within the vector
-                Books.push_back(Book); 
+                Book.BookInput(); // User inputs info           
+                Books.push_back(Book); // book gets stored
 
                 // User decision to continue saving books 
                 do {
@@ -118,33 +115,41 @@ main(){
                         continue;
                     }
 
+                    while (SaveOption == 1){
 
-                    while (SaveOption == 1) {
-
-                        Book.BookInput(); // book info 
-                        Books.push_back(Book); // book info gets stored
+                        Book.BookInput(); //input
+                        Books.push_back(Book); //store
 
                         do {
 
                             SaveMode();
-                            
-                            if (SaveOption == 1)
-                            
-                        } while (SaveOption != 1 && SaveOption != 2);
-                        
 
+                            if (!(std::cin >> SaveOption)) { // check for non number input 
+
+                                std::cout << "WRONG INPUT (ENTER NUMBER)" << std::endl;
+                                std::cin.clear();
+                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
+
+                                continue;
+                            } 
+
+                            if (SaveOption == 2) {
+
+                                break;
+                            } else {
+
+                                std::cout << "WRONG INPUT" << std::endl;
+                            }
+                        } while (true);
+                      
                     } if (SaveOption == 2) {
 
                         break;
                     } else {
 
                         std::cout << "WRONG INPUT" << std::endl;
+                        continue;
                     }
-                    
-                    //need to go back to menu here
-                    // print book info here to check if books are actually being stored
-                    // need conditional for wrong numebr inputted
-                    // after user types in wrong input it still says 'Book Saved' due to function calling
 
                 } while (SaveOption != 1 && SaveOption != 2);
         
