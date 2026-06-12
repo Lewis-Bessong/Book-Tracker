@@ -128,6 +128,8 @@ main(){
 
                             SaveMode();
                             
+                            if (SaveOption == 1)
+                            
                         } while (SaveOption != 1 && SaveOption != 2);
                         
 
@@ -145,8 +147,7 @@ main(){
                     // after user types in wrong input it still says 'Book Saved' due to function calling
 
                 } while (SaveOption != 1 && SaveOption != 2);
-            
-
+        
                 // posibbly something to do here for lopping back to menu 
                 continue;
 
