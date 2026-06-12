@@ -94,9 +94,9 @@ main(){
         
         // switch statments for what user inputs from menu
         switch (MenuOption) { 
-
-            // user chooses to save 
+             
             case 1: 
+                //save
 
                 Book.BookInput(); // User inputs info           
                 Books.push_back(Book); // book gets stored
@@ -115,11 +115,12 @@ main(){
                         continue;
                     }
 
-                    while (SaveOption == 1){
+                    while (SaveOption == 1){ // if 1, keeps repeating this code 
 
                         Book.BookInput(); //input
                         Books.push_back(Book); //store
 
+                        // constantly repeats (condtionals inside break out of loop)
                         do {
 
                             SaveMode();
@@ -148,10 +149,10 @@ main(){
                             }
                         } while (true);
                       
-                    } if (SaveOption == 2) {
+                    } if (SaveOption == 2) { // breaks out while loop 
 
                         break;
-                    } else {
+                    } else { //invalid input occurs
 
                         std::cout << "WRONG INPUT" << std::endl;
                         continue;
@@ -164,8 +165,7 @@ main(){
 
             case 2: // user chooses to view 
 
-                // add conditionals for what book user wants to see
-                // add indexed elements from vector
+
                 std::cout << "Viewing..." << std::endl;
                 break; 
             case 3: // user chooses to end program
