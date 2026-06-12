@@ -159,14 +159,23 @@ main(){
                     }
 
                 } while (SaveOption != 1 && SaveOption != 2);
-        
+
                 // posibbly something to do here for lopping back to menu 
                 continue;
 
             case 2: // user chooses to view 
 
-
-                std::cout << "Viewing..." << std::endl;
+                //cheacking if it saves book and in order
+                std::cout << "BOOK 1 INFO" << std::endl;
+                std::cout << "------------" << std::endl;
+                std::cout << "Title: " << Books[0].title << std::endl;
+                std::cout << "Author: " << Books[0].author << std::endl;
+                //book 2 that they saved
+                std::cout << "BOOK 2 INFO" << std::endl;
+                std::cout << "------------" << std::endl;
+                std::cout << "Title: " << Books[1].title << std::endl;
+                std::cout << "Author: " << Books[1].author << std::endl;
+                
                 break; 
             case 3: // user chooses to end program
                 // finished
