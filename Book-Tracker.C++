@@ -22,7 +22,14 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Book Title: ";
             std::getline(std::cin, title);
             std::cout << "Book Author: ";
-            std::getline(std::cin, author);         
+            std::getline(std::cin, author); 
+            std::cout << "Genre: ";
+            std::getline(std::cin, genre);
+            //progress give them 3 options
+            std::cout << "Pages: ";
+            std::cin >> pages;
+            std::cout << "Rating (1 = really bad, 10 = really good): ";
+            std::cin >> rating;        
 
         };
 
