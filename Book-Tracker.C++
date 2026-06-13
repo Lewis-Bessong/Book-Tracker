@@ -163,19 +163,27 @@ main(){
                 // just checking if its actually saving thier books
                 for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
 
+                    std::cout << "-------------------------" << std::endl;
                     std::cout << "Title: " << Books[i].title << std::endl; 
                     std::cout << "Author: " << Books[i].author << std::endl;
+            
                 }
+
+                std::cout << "Press Enter to go back to menu..."; 
+                std::cin >> MenuOption;
 
                 // posibbly something to do here for lopping back to menu 
                 continue;
 
             case 2: // user chooses to view 
 
-                // most likely just print out all of what user has saved
+                for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
 
-                //future plans to edit books and so on
-
+                    std::cout << "-------------------------" << std::endl;
+                    std::cout << "Title: " << Books[i].title << std::endl; 
+                    std::cout << "Author: " << Books[i].author << std::endl;
+            
+                }
                 
                 break; 
             case 3: // user chooses to end program
