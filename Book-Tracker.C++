@@ -81,6 +81,7 @@ main(){
 
         // Starting menu
         Menu();
+        std::string DummyInput;
         
         // checks for non-number input
         if (!(std::cin >> MenuOption)) { 
@@ -169,11 +170,12 @@ main(){
             
                 }
 
-                std::cout << "Press Enter to go back to menu..."; 
-                std::cin >> MenuOption;
+                std::cout << "Input Anything For Menu: "; 
 
+                std::cin >> DummyInput;
+                                                        
                 // posibbly something to do here for lopping back to menu 
-                continue;
+                break;
 
             case 2: // user chooses to view 
 
@@ -195,8 +197,8 @@ main(){
                 //finished
                 std::cout << "WRONG INPUT." << std::endl;
 
-        };
+        }
 
-    } while (MenuOption != 1 && MenuOption != 2 && MenuOption != 3); // do block will be repeated if this condition happens
+    } while (MenuOption != 3); // do block will be repeated if this condition happens
 
 }
