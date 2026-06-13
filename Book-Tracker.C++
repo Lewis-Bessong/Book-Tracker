@@ -37,16 +37,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
             std::cout << "Title: " << title << "\n";
             std::cout << "Authro: " << author << std::endl;
-        };
-
-        void SaveBook() {
-  
-        };
-
-        
-    private: // nonaccesale in main
-    
-    
+        };   
 };
 
 void Menu() { // Starting menu for user (Seeing what the program can do)  
@@ -88,7 +79,7 @@ main(){
 
         // Starting menu
         Menu();
-        std::string DummyInput;
+        std::string DummyInput; // used to repeat program
         
         // checks for non-number input
         if (!(std::cin >> MenuOption)) { 
