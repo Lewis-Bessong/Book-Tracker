@@ -33,11 +33,6 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
         };
 
-        void DisplayBook() { // used to show what user has typed
-
-            std::cout << "Title: " << title << "\n";
-            std::cout << "Authro: " << author << std::endl;
-        };   
 };
 
 void Menu() { // Starting menu for user (Seeing what the program can do)  
@@ -165,6 +160,9 @@ main(){
                     std::cout << "-------------------------" << std::endl;
                     std::cout << "Title: " << Books[i].title << std::endl; 
                     std::cout << "Author: " << Books[i].author << std::endl;
+                    std::cout << "Genre: " << Books[i].genre << std::endl;
+                    std::cout << "Pages: " << Books[i].pages << std::endl;
+                    std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
             
                 }
 
@@ -182,6 +180,9 @@ main(){
                     std::cout << "-------------------------" << std::endl;
                     std::cout << "Title: " << Books[i].title << std::endl; 
                     std::cout << "Author: " << Books[i].author << std::endl;
+                    std::cout << "Genre: " << Books[i].genre << std::endl;
+                    std::cout << "Pages: " << Books[i].pages << std::endl;
+                    std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
             
                 }
                 
