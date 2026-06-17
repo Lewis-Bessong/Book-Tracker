@@ -74,17 +74,14 @@ main(){
 
     // file
     std::fstream myFile;
-    myFile.open("books.txt",std::ios::out); // wrtie mode
+    myFile.open("books.txt",std::ios::in); // read mode
     if (myFile.is_open()) { 
-        myFile << "Hi" << std::endl; // prints out to the file
-        myFile << "This is second line." << std::endl;
-        myFile.close(); // closes the file
-    }
-    myFile.open("books.txt",std::ios::app); // append mode (add new info to file)
-    if (myFile.is_open()) { 
+        std::string line;
+        while (getline(myFile, line)) { // reads a line of text from 'myFile' then stores it in 'line'
+            std::cout << line << std::endl;
+        }
         
-        myFile << "Monkey" << std::endl;
-        myFile.close(); // closes the file
+        myFile.close();
     }
 
     // variables
