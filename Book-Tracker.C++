@@ -10,26 +10,46 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
         std::string title; 
         std::string author; 
         std::string genre;  
-        std::string progress; 
+        int progress; 
         int pages;
         int rating;
         std::string SaveOption; // for user input towards save method
 
         void BookInput() { // what user will type info into
-
+                
             std::cin.clear();
             std::cin.ignore();
             std::cout << "Book Title: ";
             std::getline(std::cin, title);
-            std::cout << "Book Author: ";
-            std::getline(std::cin, author); 
+
+            do { // conditonal loop for wrong input (author)
+
+                std::cout << "Book Author: "; 
+
+                if (!(std::getline(std::cin, author))) { 
+
+                    std::cout << "WRONG INPUT. (Enter Letters)" << std:: endl;
+                    std::cin.clear(); // resets fail 
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
+
+                    continue; // still goes to the switch statment 
+                } 
+
+                break;
+                
+            } while (true);
+
             std::cout << "Genre: ";
             std::getline(std::cin, genre);
+
             //progress give them 3 options
+
             std::cout << "Pages: ";
             std::cin >> pages;
+
             std::cout << "Rating (1 = really bad, 10 = really good): ";
-            std::cin >> rating;        
+            std::cin >> rating;
+
 
         };
 
