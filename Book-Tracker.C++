@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <limits>
+#include <fstream>
 
 // Book class for what a book needs 
 struct BookBlueprint { // 'struct' to keep everything together regardless of data type
@@ -184,9 +185,21 @@ main(){
 
                         std::cout << "3 (Completed Book)" << std::endl;
                     }
+
                     std::cout << "Pages: " << Books[i].pages << std::endl;
-                    std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
-            
+
+                    // For Rating depending on book progress
+                    if (Books[i].progress = 1) {
+
+                        break;
+                    } else if (Books[i].progress = 2) {
+                    
+                        break;
+                    } else if (Books[i].progress = 3) { // if completed then show rating
+
+                        std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
+                    }
+        
                 }
 
                 std::cout << "Input Anything For Menu: "; 
@@ -204,9 +217,34 @@ main(){
                     std::cout << "Title: " << Books[i].title << std::endl; 
                     std::cout << "Author: " << Books[i].author << std::endl;
                     std::cout << "Genre: " << Books[i].genre << std::endl;
+                    std::cout << "Progress: ";
+                    if (Books[i].progress = 1) {
+
+                        std::cout << "1 (Plan To Read)" << std::endl;
+                        break;
+                    } else if (Books[i].progress = 2) {
+
+                        std::cout << "2 (Currently Reading)" << std::endl;
+                        break; 
+                    } else if (Books[i].progress = 3) {
+
+                        std::cout << "3 (Completed Book)" << std::endl;
+                    }
+
                     std::cout << "Pages: " << Books[i].pages << std::endl;
-                    std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
-            
+
+                    // For Rating depending on book progress
+                    if (Books[i].progress = 1) {
+
+                        break;
+                    } else if (Books[i].progress = 2) {
+                    
+                        break;
+                    } else if (Books[i].progress = 3) { // if completed then show rating
+
+                        std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
+                    }
+
                 }
                 
                 break; 
