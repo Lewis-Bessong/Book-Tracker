@@ -71,7 +71,16 @@ void SaveMode() {
 }
 
 main(){
-    
+
+    // file
+    std::fstream myFile;
+    myFile.open("books.txt",std::ios::out); // wrtie mode
+    if (myFile.is_open()) {
+        myFile << "Hi" << std::endl; // prints out to the file
+        myFile << "This is second line." << std::endl;
+        myFile.close(); // closes the file
+    }
+
     // variables
     int MenuOption;
     int SaveOption;
