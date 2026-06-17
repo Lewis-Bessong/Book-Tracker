@@ -19,37 +19,29 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
                 
             std::cin.clear();
             std::cin.ignore();
-            std::cout << "Book Title: ";
+            std::cout << "Title: ";
             std::getline(std::cin, title);
 
-            do { // conditonal loop for wrong input (author)
-
-                std::cout << "Book Author: "; 
-
-                if (!(std::getline(std::cin, author))) { 
-
-                    std::cout << "WRONG INPUT. (Enter Letters)" << std:: endl;
-                    std::cin.clear(); // resets fail 
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
-
-                    continue; // still goes to the switch statment 
-                } 
-
-                break;
-                
-            } while (true);
+            std::cout << "Author: "; 
+            std::getline(std::cin, author);
 
             std::cout << "Genre: ";
             std::getline(std::cin, genre);
 
-            //progress give them 3 options
+            // conditionals for progress r needed
+            std::cout << "Progress (Input #)\n" ;
+            std::cout << "--------------------\n";
+            std::cout << "1. Plan to Read\n";
+            std::cout << "2. Curretly Reading\n";
+            std::cout << "3. Completed Book" << std:: endl;
+            std::cout << "Enter Here: ";
+            std::cin >> progress;
 
             std::cout << "Pages: ";
             std::cin >> pages;
 
             std::cout << "Rating (1 = really bad, 10 = really good): ";
             std::cin >> rating;
-
 
         };
 
@@ -181,6 +173,17 @@ main(){
                     std::cout << "Title: " << Books[i].title << std::endl; 
                     std::cout << "Author: " << Books[i].author << std::endl;
                     std::cout << "Genre: " << Books[i].genre << std::endl;
+                    std::cout << "Progress: ";
+                    if (Books[i].progress = 1) {
+
+                        std::cout << "1 (Plan To Read)" << std::endl;
+                    } else if (Books[i].progress = 2) {
+
+                        std::cout << "2 (Currently Reading)" << std::endl; 
+                    } else if (Books[i].progress = 3) {
+
+                        std::cout << "3 (Completed Book)" << std::endl;
+                    }
                     std::cout << "Pages: " << Books[i].pages << std::endl;
                     std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
             
