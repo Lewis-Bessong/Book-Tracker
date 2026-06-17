@@ -75,9 +75,15 @@ main(){
     // file
     std::fstream myFile;
     myFile.open("books.txt",std::ios::out); // wrtie mode
-    if (myFile.is_open()) {
+    if (myFile.is_open()) { 
         myFile << "Hi" << std::endl; // prints out to the file
         myFile << "This is second line." << std::endl;
+        myFile.close(); // closes the file
+    }
+    myFile.open("books.txt",std::ios::app); // append mode (add new info to file)
+    if (myFile.is_open()) { 
+        
+        myFile << "Monkey" << std::endl;
         myFile.close(); // closes the file
     }
 
