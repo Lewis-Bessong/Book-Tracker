@@ -85,21 +85,6 @@ main(){
 
     // File to store saved books
     std::fstream myFile;
-    myFile.open("books.txt",std::ios::out); // read mode
-    if (myFile.is_open()) { 
-
-        myFile << "-----------" << std::endl;
-        myFile << "Title: " << std::endl;
-        myFile << "Author: " << std::endl;
-        myFile << "Genre: " << std::endl;
-        myFile << "Pages: " << std::endl;
-        myFile << "Progress: " << std::endl;
-        myFile << "Pages: " << std::endl;
-        myFile << "Rating(1-10): " << std::endl;
-        
-        myFile.close();
-    }
-
     
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
@@ -191,6 +176,7 @@ main(){
                     myFile.open("books.txt",std::ios::app); // append mode
                     if (myFile.is_open()) { 
 
+                        myFile << "Saved Books." << std::endl;
                         myFile << "-------------------------" << std::endl;
                         myFile << "Title: " << Books[i].title << std::endl; 
                         myFile << "Author: " << Books[i].author << std::endl;
@@ -211,11 +197,11 @@ main(){
 
                         // For Rating depending on book progress
                         if (Books[i].progress = 1) {
-
                             break;
+                            
                         } else if (Books[i].progress = 2) {
-                    
                             break;
+                                               
                         } else if (Books[i].progress = 3) { // if completed then show rating
 
                             myFile << "Rating (1-10): " << Books[i].rating << std::endl;
@@ -233,8 +219,10 @@ main(){
 
             case 2: // user chooses to view 
 
-                for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
+                // prints what they just saved
+                for (int i = 0; i < Books.size(); i++) { 
 
+                    std::cout << "Frequntly Saved Books" << std::endl;
                     std::cout << "-------------------------" << std::endl;
                     std::cout << "Title: " << Books[i].title << std::endl; 
                     std::cout << "Author: " << Books[i].author << std::endl;
@@ -269,6 +257,15 @@ main(){
 
                 }
                 
+                // prints what they saved in the past
+                for (int i = 0; i < Books.size(); i++) {
+
+                    // add read mode file in here
+                    
+                }
+
+
+
                 break; 
             case 3: // user chooses to end program
                 // finished 
