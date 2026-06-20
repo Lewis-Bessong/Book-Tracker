@@ -1,3 +1,8 @@
-Hi
-This is second line.
-Monkey
+-----------
+Title: 
+Author: 
+Genre: 
+Pages: 
+Progress: 
+Pages: 
+Rating(1-10): 

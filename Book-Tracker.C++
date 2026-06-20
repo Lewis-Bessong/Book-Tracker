@@ -72,17 +72,6 @@ void SaveMode() {
 
 main(){
 
-    // file
-    std::fstream myFile;
-    myFile.open("books.txt",std::ios::in); // read mode
-    if (myFile.is_open()) { 
-        std::string line;
-        while (getline(myFile, line)) { // reads a line of text from 'myFile' then stores it in 'line'
-            std::cout << line << std::endl;
-        }
-        
-        myFile.close();
-    }
 
     // variables
     int MenuOption;
@@ -93,6 +82,24 @@ main(){
 
     //Object
     BookBlueprint Book;
+
+    // File to store saved books
+    std::fstream myFile;
+    myFile.open("books.txt",std::ios::out); // read mode
+    if (myFile.is_open()) { 
+
+        myFile << "-----------" << std::endl;
+        myFile << "Title: " << std::endl;
+        myFile << "Author: " << std::endl;
+        myFile << "Genre: " << std::endl;
+        myFile << "Pages: " << std::endl;
+        myFile << "Progress: " << std::endl;
+        myFile << "Pages: " << std::endl;
+        myFile << "Rating(1-10): " << std::endl;
+        
+        myFile.close();
+    }
+
     
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
@@ -114,8 +121,7 @@ main(){
         // switch statments for what user inputs from menu
         switch (MenuOption) { 
              
-            case 1: 
-                //save
+            case 1: // save
 
                 Book.BookInput(); // User inputs info           
                 Books.push_back(Book); // book gets stored
@@ -179,46 +185,50 @@ main(){
 
                 } while (SaveOption != 1 && SaveOption != 2);
 
-                // just checking if its actually saving thier books
                 for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
 
-                    std::cout << "-------------------------" << std::endl;
-                    std::cout << "Title: " << Books[i].title << std::endl; 
-                    std::cout << "Author: " << Books[i].author << std::endl;
-                    std::cout << "Genre: " << Books[i].genre << std::endl;
-                    std::cout << "Progress: ";
-                    if (Books[i].progress = 1) {
+                    // new info gets added to file
+                    myFile.open("books.txt",std::ios::app); // append mode
+                    if (myFile.is_open()) { 
 
-                        std::cout << "1 (Plan To Read)" << std::endl;
-                    } else if (Books[i].progress = 2) {
+                        myFile << "-------------------------" << std::endl;
+                        myFile << "Title: " << Books[i].title << std::endl; 
+                        myFile << "Author: " << Books[i].author << std::endl;
+                        myFile << "Genre: " << Books[i].genre << std::endl;
+                        myFile << "Progress: ";
+                        if (Books[i].progress = 1) {
 
-                        std::cout << "2 (Currently Reading)" << std::endl; 
-                    } else if (Books[i].progress = 3) {
+                            myFile << "1 (Plan To Read)" << std::endl;
+                        } else if (Books[i].progress = 2) {
 
-                        std::cout << "3 (Completed Book)" << std::endl;
-                    }
+                            myFile << "2 (Currently Reading)" << std::endl; 
+                        } else if (Books[i].progress = 3) {
 
-                    std::cout << "Pages: " << Books[i].pages << std::endl;
+                            myFile << "3 (Completed Book)" << std::endl;
+                        }
 
-                    // For Rating depending on book progress
-                    if (Books[i].progress = 1) {
+                        myFile << "Pages: " << Books[i].pages << std::endl;
 
-                        break;
-                    } else if (Books[i].progress = 2) {
+                        // For Rating depending on book progress
+                        if (Books[i].progress = 1) {
+
+                            break;
+                        } else if (Books[i].progress = 2) {
                     
-                        break;
-                    } else if (Books[i].progress = 3) { // if completed then show rating
+                            break;
+                        } else if (Books[i].progress = 3) { // if completed then show rating
 
-                        std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
+                            myFile << "Rating (1-10): " << Books[i].rating << std::endl;
+                        }
+        
+                        myFile.close();
                     }
         
                 }
 
                 std::cout << "Input Anything For Menu: "; 
-
                 std::cin >> DummyInput;
                                                         
-                // posibbly something to do here for lopping back to menu 
                 break;
 
             case 2: // user chooses to view 
@@ -261,7 +271,7 @@ main(){
                 
                 break; 
             case 3: // user chooses to end program
-                // finished
+                // finished 
                 std::cout << "Goodbye!" << std::endl;
                 std::exit(0); // end program immediatly with success
                 break;
