@@ -29,6 +29,9 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Genre: ";
             std::getline(std::cin, genre);
 
+            std::cout << "Pages: ";
+            std::cin >> pages;
+
             // conditionals for progress r needed
             std::cout << "Progress (Input #)\n" ;
             std::cout << "--------------------\n";
@@ -38,11 +41,17 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Enter Here: ";
             std::cin >> progress;
 
-            std::cout << "Pages: ";
-            std::cin >> pages;
+            // conditional for rating (depending on progress)
+            if (progress == 1) {
 
-            std::cout << "Rating (1 = really bad, 10 = really good): ";
-            std::cin >> rating;
+                
+            } else if (progress == 2) {
+
+            } else if (progress == 3) {
+
+                std::cout << "Rating (1 = really bad, 10 = really good): ";
+                std::cin >> rating;
+            }
 
         };
 
@@ -85,6 +94,12 @@ main(){
 
     // File to store saved books
     std::fstream myFile;
+    // overrides info everytime, this is temporary
+    myFile.open("books.txt", std::ios::out);
+    if (myFile.is_open()) {
+
+        myFile.close();
+    }
     
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
@@ -170,6 +185,7 @@ main(){
 
                 } while (SaveOption != 1 && SaveOption != 2);
 
+                // adds info into seprate file
                 for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
 
                     // new info gets added to file
@@ -181,31 +197,23 @@ main(){
                         myFile << "Title: " << Books[i].title << std::endl; 
                         myFile << "Author: " << Books[i].author << std::endl;
                         myFile << "Genre: " << Books[i].genre << std::endl;
+                        myFile << "Pages: " << Books[i].pages << std::endl;
                         myFile << "Progress: ";
-                        if (Books[i].progress = 1) {
+                        if (Books[i].progress == 1) {
 
                             myFile << "1 (Plan To Read)" << std::endl;
-                        } else if (Books[i].progress = 2) {
+                            break;
+                        } else if (Books[i].progress == 2) {
 
                             myFile << "2 (Currently Reading)" << std::endl; 
-                        } else if (Books[i].progress = 3) {
+                            break;
+                        } else if (Books[i].progress == 3) {
 
                             myFile << "3 (Completed Book)" << std::endl;
+                            myFile << "Rating(1-10): " << Books[i].rating << std::endl;
+                            break;
                         }
 
-                        myFile << "Pages: " << Books[i].pages << std::endl;
-
-                        // For Rating depending on book progress
-                        if (Books[i].progress = 1) {
-                            break;
-                            
-                        } else if (Books[i].progress = 2) {
-                            break;
-                                               
-                        } else if (Books[i].progress = 3) { // if completed then show rating
-
-                            myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                        }
         
                         myFile.close();
                     }
@@ -228,15 +236,15 @@ main(){
                     std::cout << "Author: " << Books[i].author << std::endl;
                     std::cout << "Genre: " << Books[i].genre << std::endl;
                     std::cout << "Progress: ";
-                    if (Books[i].progress = 1) {
+                    if (Books[i].progress == 1) {
 
                         std::cout << "1 (Plan To Read)" << std::endl;
                         break;
-                    } else if (Books[i].progress = 2) {
+                    } else if (Books[i].progress == 2) {
 
                         std::cout << "2 (Currently Reading)" << std::endl;
                         break; 
-                    } else if (Books[i].progress = 3) {
+                    } else if (Books[i].progress == 3) {
 
                         std::cout << "3 (Completed Book)" << std::endl;
                     }
@@ -244,13 +252,13 @@ main(){
                     std::cout << "Pages: " << Books[i].pages << std::endl;
 
                     // For Rating depending on book progress
-                    if (Books[i].progress = 1) {
+                    if (Books[i].progress == 1) {
 
                         break;
-                    } else if (Books[i].progress = 2) {
+                    } else if (Books[i].progress == 2) {
                     
                         break;
-                    } else if (Books[i].progress = 3) { // if completed then show rating
+                    } else if (Books[i].progress == 3) { // if completed then show rating
 
                         std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
                     }
@@ -281,3 +289,19 @@ main(){
     } while (MenuOption != 3); // do block will be repeated if this condition happens
 
 }
+
+/*
+
+// For Rating depending on book progress
+                        if (Books[i].progress = 1) {
+                            break;
+                            
+                        } else if (Books[i].progress = 2) {
+                            break;
+                                               
+                        } else if (Books[i].progress = 3) { // if completed then show rating
+
+                            myFile << "Rating (1-10): " << Books[i].rating << std::endl;
+                        }
+
+*/

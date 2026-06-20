@@ -1,27 +1,6 @@
------------
-Title: 
-Author: 
-Genre: 
-Pages: 
-Progress: 
-Pages: 
-Rating(1-10): 
--------------------------
-Title: The Flash
-Author: LEwis B
-Genre: Fiction
-Progress: 1 (Plan To Read)
-Pages: 500
--------------------------
-Title: Harry Potter
-Author: Mike J
-Genre: Fiction
-Progress: 1 (Plan To Read)
-Pages: 600
 Saved Books.
 -------------------------
-Title: Atomic Habits
-Author: James Clear
-Genre: Nonfiction
-Progress: 1 (Plan To Read)
-Pages: 250
+Title: s
+Author: s
+Genre: s
+Progress: 3 (Completed Book)
