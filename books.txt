@@ -1,6 +1,8 @@
 Saved Books.
 -------------------------
-Title: s
-Author: s
-Genre: s
+Title: The Flash
+Author: LEwis B
+Genre: Fiction
+Pages: 500
 Progress: 3 (Completed Book)
+Rating(1-10): 10

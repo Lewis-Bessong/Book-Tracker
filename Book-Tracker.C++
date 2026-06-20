@@ -81,6 +81,7 @@ void SaveMode() {
 
 main(){
 
+    // ======= BOOK TRACKER TOOLS ========
 
     // variables
     int MenuOption;
@@ -94,6 +95,7 @@ main(){
 
     // File to store saved books
     std::fstream myFile;
+
     // overrides info everytime, this is temporary
     myFile.open("books.txt", std::ios::out);
     if (myFile.is_open()) {
@@ -101,12 +103,16 @@ main(){
         myFile.close();
     }
     
+
+    // ======== SYSTEM LOGIC ========
+
     // Looped Menu output, user input, and conditionals (switch statments)
     do {
 
+        std::string DummyInput; // used to repeat program
+
         // Starting menu
         Menu();
-        std::string DummyInput; // used to repeat program
         
         // checks for non-number input
         if (!(std::cin >> MenuOption)) { 
@@ -121,12 +127,12 @@ main(){
         // switch statments for what user inputs from menu
         switch (MenuOption) { 
              
-            case 1: // save
+            case 1: // ===== SAVE OPTION =====
 
                 Book.BookInput(); // User inputs info           
                 Books.push_back(Book); // book gets stored
 
-                // User decision to continue saving books 
+                // ===== LOOPED SAVE OPTION/LOGIC ===== 
                 do {
 
                     SaveMode(); // if they want to save again
@@ -174,6 +180,39 @@ main(){
                             }
                         } while (true);
                       
+                        // info from loop gets added into file
+                        for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
+
+                            // new info gets added to file
+                            myFile.open("books.txt",std::ios::app); // append mode
+                            if (myFile.is_open()) { 
+
+                                myFile << "Saved Books." << std::endl;
+                                myFile << "-------------------------" << std::endl;
+                                myFile << "Title: " << Books[i].title << std::endl; 
+                                myFile << "Author: " << Books[i].author << std::endl;
+                                myFile << "Genre: " << Books[i].genre << std::endl;
+                                myFile << "Pages: " << Books[i].pages << std::endl;
+                                myFile << "Progress: ";
+                                if (Books[i].progress == 1) {
+
+                                    myFile << "1 (Plan To Read)" << std::endl;
+                                    break;
+                                } else if (Books[i].progress == 2) {
+
+                                    myFile << "2 (Currently Reading)" << std::endl; 
+                                    break;
+                                } else if (Books[i].progress == 3) {
+
+                                    myFile << "3 (Completed Book)" << std::endl;
+                                    myFile << "Rating(1-10): " << Books[i].rating << std::endl;
+                                    break;
+                                }
+
+                                myFile.close();
+                            }
+                        }
+
                     } if (SaveOption == 2) { // breaks out while loop 
 
                         break;
@@ -185,7 +224,7 @@ main(){
 
                 } while (SaveOption != 1 && SaveOption != 2);
 
-                // adds info into seprate file
+                // ===== SAVED INFO FILE =====
                 for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
 
                     // new info gets added to file
@@ -220,12 +259,13 @@ main(){
         
                 }
 
+                // used to go back to menu 
                 std::cout << "Input Anything For Menu: "; 
                 std::cin >> DummyInput;
                                                         
                 break;
 
-            case 2: // user chooses to view 
+            case 2: // ===== VIEW OPTION ===== 
 
                 // prints what they just saved
                 for (int i = 0; i < Books.size(); i++) { 
@@ -275,12 +315,12 @@ main(){
 
 
                 break; 
-            case 3: // user chooses to end program
+            case 3: // ===== STOP PROGRAM OPTION =====
                 // finished 
                 std::cout << "Goodbye!" << std::endl;
                 std::exit(0); // end program immediatly with success
                 break;
-            default: // user puts something else than 1, 2, 3
+            default: // ===== INVALID INPUT CASE =====
                 //finished
                 std::cout << "WRONG INPUT." << std::endl;
 
