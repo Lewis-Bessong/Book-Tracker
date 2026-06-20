@@ -231,6 +231,7 @@ main(){
                     myFile.open("books.txt",std::ios::app); // append mode
                     if (myFile.is_open()) { 
 
+
                         myFile << "Saved Books." << std::endl;
                         myFile << "-------------------------" << std::endl;
                         myFile << "Title: " << Books[i].title << std::endl; 
@@ -253,7 +254,8 @@ main(){
                             break;
                         }
 
-        
+                        myFile << "-------------------------------" << std::endl;
+                        
                         myFile.close();
                     }
         
@@ -270,7 +272,8 @@ main(){
                 // prints what they just saved
                 for (int i = 0; i < Books.size(); i++) { 
 
-                    std::cout << "Frequntly Saved Books" << std::endl;
+                    std::cout << "-------------------------" << std::endl;
+                    std::cout << "Books Saved Right Now" << std::endl;
                     std::cout << "-------------------------" << std::endl;
                     std::cout << "Title: " << Books[i].title << std::endl; 
                     std::cout << "Author: " << Books[i].author << std::endl;
@@ -303,6 +306,7 @@ main(){
                         std::cout << "Rating (1-10): " << Books[i].rating << std::endl;
                     }
 
+                    std::cout << "------------------" << std::endl; // for readability
                 }
                 
                 // prints what they saved in the past
@@ -311,8 +315,6 @@ main(){
                     // add read mode file in here
                     
                 }
-
-
 
                 break; 
             case 3: // ===== STOP PROGRAM OPTION =====
