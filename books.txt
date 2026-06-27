@@ -1,7 +1,8 @@
-Saved Books.
 -------------------------
 Title: t
 Author: t
 Genre: t
-Pages: 4
-Progress: 2 (Currently Reading)
+Progress: 3 (Completed Book)
+Pages: 5
+Rating (1-10): 8
+------------------

@@ -129,7 +129,50 @@ main(){
             case 1: // ===== SAVE OPTION =====
 
                 Book.BookInput(); // User inputs info           
-                Books.push_back(Book); // book gets stored
+                Books.push_back(Book); // book gets stored (short term)
+
+                // info gets stored in file (long term)
+                for (int i = 0; i < Books.size(); i++) { 
+ 
+                    myFile.open("books.txt", std::ios::app); {
+                        if (myFile.is_open()){
+
+                            myFile << "-------------------------" << std::endl; // for readability
+                            myFile << "Title: " << Books[i].title << std::endl; 
+                            myFile << "Author: " << Books[i].author << std::endl;
+                            myFile << "Genre: " << Books[i].genre << std::endl;
+                            myFile << "Progress: ";
+                            if (Books[i].progress == 1) {
+
+                                myFile << "1 (Plan To Read)" << std::endl;
+                                break;
+                            } else if (Books[i].progress == 2) {
+
+                                myFile << "2 (Currently Reading)" << std::endl;
+                                break; 
+                            } else if (Books[i].progress == 3) {
+
+                                myFile << "3 (Completed Book)" << std::endl;
+                            }
+
+                            myFile << "Pages: " << Books[i].pages << std::endl;
+
+                            // For Rating depending on book progress
+                            if (Books[i].progress == 1) {
+
+                                break;
+                            } else if (Books[i].progress == 2) {
+                    
+                                break;
+                            } else if (Books[i].progress == 3) { // if completed then show rating
+
+                                myFile << "Rating (1-10): " << Books[i].rating << std::endl;
+                            }                         
+                            myFile.close();
+                        }
+
+                    }
+                }
 
                 // ===== LOOPED SAVE OPTION/LOGIC ===== 
                 do {
