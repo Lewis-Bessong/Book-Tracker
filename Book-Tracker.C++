@@ -150,43 +150,6 @@ main(){
                         Book.BookInput(); //input
                         Books.push_back(Book); //store
 
-                        // ===== SAVED INFO FILE =====
-                        for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
-
-                            // new info gets added to file
-                            myFile.open("books.txt",std::ios::app); // append mode
-                            if (myFile.is_open()) { 
-
-
-                                myFile << "Saved Books." << std::endl;
-                                myFile << "-------------------------" << std::endl;
-                                myFile << "Title: " << Books[i].title << std::endl; 
-                                myFile << "Author: " << Books[i].author << std::endl;
-                                myFile << "Genre: " << Books[i].genre << std::endl;
-                                myFile << "Pages: " << Books[i].pages << std::endl;
-                                myFile << "Progress: ";
-                                if (Books[i].progress == 1) {
-
-                                    myFile << "1 (Plan To Read)" << std::endl;
-                                    break;
-                                } else if (Books[i].progress == 2) {
-
-                                    myFile << "2 (Currently Reading)" << std::endl; 
-                                    break;
-                                } else if (Books[i].progress == 3) {
-
-                                    myFile << "3 (Completed Book)" << std::endl;
-                                    myFile << "Rating(1-10): " << Books[i].rating << std::endl;
-                                    break;
-                                }
-
-                                myFile << "-------------------------------" << std::endl;
-                        
-                                myFile.close();
-                            }
-        
-                        }
-
                         // constantly repeats (condtionals inside break out of loop)
                         do {
 
@@ -209,88 +172,15 @@ main(){
                                 Book.BookInput(); //input
                                 Books.push_back(Book); //store
 
-                                // save book
-                                for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
-
-                                    // new info gets added to file
-                                    myFile.open("books.txt",std::ios::app); // append mode
-                                    if (myFile.is_open()) { 
-
-
-                                        myFile << "Saved Books." << std::endl;
-                                        myFile << "-------------------------" << std::endl;
-                                        myFile << "Title: " << Books[i].title << std::endl; 
-                                        myFile << "Author: " << Books[i].author << std::endl;
-                                        myFile << "Genre: " << Books[i].genre << std::endl;
-                                        myFile << "Pages: " << Books[i].pages << std::endl;
-                                        myFile << "Progress: ";
-                                        if (Books[i].progress == 1) {
-
-                                            myFile << "1 (Plan To Read)" << std::endl;
-                                            break;
-                                        } else if (Books[i].progress == 2) {
-
-                                            myFile << "2 (Currently Reading)" << std::endl; 
-                                            break;
-                                        } else if (Books[i].progress == 3) {
-
-                                            myFile << "3 (Completed Book)" << std::endl;
-                                            myFile << "Rating(1-10): " << Books[i].rating << std::endl;
-                                            break;
-                                        }
-
-                                        myFile << "-------------------------------" << std::endl;
-                        
-                                        myFile.close();
-                                    }
-        
-                                }
-
                                 continue;
                             } else {
 
                                 std::cout << "WRONG INPUT" << std::endl;
                             }
+
                         } while (true);
 
                     } if (SaveOption == 2) { // breaks out while loop if want to stop saving 
-
-                        // ===== SAVED INFO FILE =====
-                        for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
-
-                            // new info gets added to file
-                            myFile.open("books.txt",std::ios::app); // append mode
-                            if (myFile.is_open()) { 
-
-
-                                myFile << "Saved Books." << std::endl;
-                                myFile << "-------------------------" << std::endl;
-                                myFile << "Title: " << Books[i].title << std::endl; 
-                                myFile << "Author: " << Books[i].author << std::endl;
-                                myFile << "Genre: " << Books[i].genre << std::endl;
-                                myFile << "Pages: " << Books[i].pages << std::endl;
-                                myFile << "Progress: ";
-                                if (Books[i].progress == 1) {
-
-                                    myFile << "1 (Plan To Read)" << std::endl;
-                                    break;
-                                } else if (Books[i].progress == 2) {
-
-                                    myFile << "2 (Currently Reading)" << std::endl; 
-                                    break;
-                                } else if (Books[i].progress == 3) {
-
-                                    myFile << "3 (Completed Book)" << std::endl;
-                                    myFile << "Rating(1-10): " << Books[i].rating << std::endl;
-                                    break;
-                                }
-
-                                myFile << "-------------------------------" << std::endl;
-                        
-                                myFile.close();
-                            }
-        
-                        }
 
                         break;
                     } else { //invalid input occurs
@@ -300,42 +190,6 @@ main(){
                     }
 
                 } while (SaveOption != 1 && SaveOption != 2);
-
-                // ===== SAVED INFO FILE =====
-                for (int i = 0; i < Books.size(); i++) { // repeats based on how many user saved
-
-                    // new info gets added to file
-                    myFile.open("books.txt", std::ios::app); // append mode
-                    if (myFile.is_open()) { 
-
-                        myFile << "Saved Books." << std::endl;
-                        myFile << "-------------------------" << std::endl;
-                        myFile << "Title: " << Books[i].title << std::endl; 
-                        myFile << "Author: " << Books[i].author << std::endl;
-                        myFile << "Genre: " << Books[i].genre << std::endl;
-                        myFile << "Pages: " << Books[i].pages << std::endl;
-                        myFile << "Progress: ";
-                        if (Books[i].progress == 1) {
-
-                            myFile << "1 (Plan To Read)" << std::endl;
-                            break;
-                        } else if (Books[i].progress == 2) {
-
-                            myFile << "2 (Currently Reading)" << std::endl; 
-                            break;
-                        } else if (Books[i].progress == 3) {
-
-                            myFile << "3 (Completed Book)" << std::endl;
-                            myFile << "Rating(1-10): " << Books[i].rating << std::endl;
-                            break;
-                        }
-
-                        myFile << "-------------------------------" << std::endl;
-                        
-                        myFile.close();
-                    }
-        
-                }
 
                 // used to go back to menu 
                 std::cout << "Input Anything For Menu: "; 

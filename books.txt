@@ -3,5 +3,5 @@ Saved Books.
 Title: t
 Author: t
 Genre: t
-Pages: 3
-Progress: 1 (Plan To Read)
+Pages: 4
+Progress: 2 (Currently Reading)
