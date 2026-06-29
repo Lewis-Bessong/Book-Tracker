@@ -26,13 +26,26 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Author: "; 
             std::getline(std::cin, author);
 
+            // Genre list
+            std::cout << "Enter # for genre\n";
+            std::cout << "-------------------\n";
+            std::cout << "1. Romance\n";
+            std::cout << "2. Fantasy\n";
+            std::cout << "3. Mystery/Crime\n";
+            std::cout << "4. Horror\n";
+            std::cout << "5. Thriller/Suspense\n";
+            std::cout << "6. Science Fiction (Sci-Fi)\n";
+            std::cout << "7. Historical Fiction\n";
+            std::cout << "8. Historical\n";
+            std::cout << "9. Self-Help/Philosophy\n";
+            std::cout << "10. Other\n";
             std::cout << "Genre: ";
-            std::getline(std::cin, genre);
+            std::cin >> genre;  
 
             std::cout << "Pages: ";
             std::cin >> pages;
 
-            // conditionals for progress r needed
+            
             std::cout << "Progress (Input #)\n" ;
             std::cout << "--------------------\n";
             std::cout << "1. Plan to Read\n";
@@ -43,10 +56,9 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
             // conditional for rating (depending on progress)
             if (progress == 1) {
-
-                
+                //empty
             } else if (progress == 2) {
-
+                //empty
             } else if (progress == 3) {
 
                 std::cout << "Rating (1 = really bad, 10 = really good): ";
