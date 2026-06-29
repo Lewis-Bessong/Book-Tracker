@@ -26,9 +26,8 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Author: "; 
             std::getline(std::cin, author);
 
-            do {
+            do { // Genre 
             
-                // Genre list
                 std::cout << "Enter # for genre\n";
                 std::cout << "-------------------\n";
                 std::cout << "1. Romance\n";
@@ -65,9 +64,11 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
             } while (true);            
 
+            // Need conditional
             std::cout << "Pages: ";
             std::cin >> pages;
    
+            //need conditional
             std::cout << "Progress (Input #)\n" ;
             std::cout << "--------------------\n";
             std::cout << "1. Plan to Read\n";
