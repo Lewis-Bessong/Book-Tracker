@@ -188,21 +188,19 @@ main(){
                             }
                             
                             
-                            
-
                             // Progress condtionals logic
                             myFile << "Progress: ";
                             if (Books[i].progress == 1) {
 
-                                myFile << "1 (Plan To Read)" << std::endl;
+                                myFile << "Plan To Read (1)" << std::endl;
                                 break;
                             } else if (Books[i].progress == 2) {
 
-                                myFile << "2 (Currently Reading)" << std::endl;
+                                myFile << "Currently Reading (2)" << std::endl;
                                 break; 
                             } else if (Books[i].progress == 3) {
 
-                                myFile << "3 (Completed Book)" << std::endl;
+                                myFile << "Completed Book (3)" << std::endl;
                             }
 
                             myFile << "Pages: " << Books[i].pages << std::endl;
@@ -300,19 +298,56 @@ main(){
                     std::cout << "-------------------------" << std::endl;
                     std::cout << "Title: " << Books[i].title << std::endl; 
                     std::cout << "Author: " << Books[i].author << std::endl;
-                    std::cout << "Genre: " << Books[i].genre << std::endl;
+
+
+                    //Genre Condtionals logic
+                    std::cout << "Genre: "; 
+                    if (Books[i].genre == 1) { // Romance
+
+                        std::cout << "Romace (1)" << std::endl;
+                    } else if (Books[i].genre == 2) { // Fantasy 
+
+                        std::cout << "Fantasy (2)" << std::endl;
+                    } else if (Books[i].genre == 3) { // Mystery/Crime
+
+                        std::cout << "Mystery/Crime (3)" << std::endl;
+                    } else if (Books[i].genre == 4) { // Horror
+
+                        std::cout << "Horror (4)" << std::endl;
+                    } else if (Books[i].genre == 5) { // Thriller/Suspens
+
+                        std::cout << "Thriller/Suspense (5)" << std::endl;
+                    } else if (Books[i].genre == 6) { // History Fiction
+
+                        std::cout << "Historical Fiction (6)" << std::endl;
+                    } else if (Books[i].genre == 7) { // Historical
+
+                        std::cout << "Historical (7)" << std::endl;
+                    } else if (Books[i].genre == 8) { // Sci Fi
+
+                        std::cout << "Science Fiction/Sci-Fi (8)" << std::endl;
+                    } else if (Books[i].genre == 9) { // Self Help/ Philosphy
+
+                        std::cout << "Self Gelp/Philosophy (9)" << std::endl;
+                    } else if (Books[i].genre == 10) { // Other/Multiple
+
+                        std::cout << "Other/Mutiple (10)" << std::endl;
+                    }
+
+
+                    // Progress condtionals logic
                     std::cout << "Progress: ";
                     if (Books[i].progress == 1) {
 
-                        std::cout << "1 (Plan To Read)" << std::endl;
+                        std::cout << "Plan To Read (1)" << std::endl;
                         break;
                     } else if (Books[i].progress == 2) {
 
-                        std::cout << "2 (Currently Reading)" << std::endl;
+                        std::cout << "Currently Reading (2)" << std::endl;
                         break; 
                     } else if (Books[i].progress == 3) {
 
-                        std::cout << "3 (Completed Book)" << std::endl;
+                        std::cout << "Completed Book (3)" << std::endl;
                     }
 
                     std::cout << "Pages: " << Books[i].pages << std::endl;
