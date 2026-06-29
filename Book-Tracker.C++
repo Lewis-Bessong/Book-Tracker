@@ -26,26 +26,41 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "Author: "; 
             std::getline(std::cin, author);
 
-            // Genre list
-            std::cout << "Enter # for genre\n";
-            std::cout << "-------------------\n";
-            std::cout << "1. Romance\n";
-            std::cout << "2. Fantasy\n";
-            std::cout << "3. Mystery/Crime\n";
-            std::cout << "4. Horror\n";
-            std::cout << "5. Thriller/Suspense\n";
-            std::cout << "6. Science Fiction (Sci-Fi)\n";
-            std::cout << "7. Historical Fiction\n";
-            std::cout << "8. Historical\n";
-            std::cout << "9. Self-Help/Philosophy\n";
-            std::cout << "10. Other/Multiple" << std::endl;
-            std::cout << "Genre: ";
-            std::cin >> genre;  
+            do {
+            
+                // Genre list
+                std::cout << "Enter # for genre\n";
+                std::cout << "-------------------\n";
+                std::cout << "1. Romance\n";
+                std::cout << "2. Fantasy\n";
+                std::cout << "3. Mystery/Crime\n";
+                std::cout << "4. Horror\n";
+                std::cout << "5. Thriller/Suspense\n";
+                std::cout << "6. Science Fiction (Sci-Fi)\n";
+                std::cout << "7. Historical Fiction\n";
+                std::cout << "8. Historical\n";
+                std::cout << "9. Self-Help/Philosophy\n";
+                std::cout << "10. Other/Multiple" << std::endl;
+                std::cout << "Genre: "; 
+
+                //invalid input conditionals (genre)
+                if (!(std::cin>>genre)) {
+
+                    std::cout << "INVALID: INPUT NUMBER" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                    continue;
+                } else {
+
+                    break;
+                }
+
+            } while (true);            
 
             std::cout << "Pages: ";
             std::cin >> pages;
-
-            
+   
             std::cout << "Progress (Input #)\n" ;
             std::cout << "--------------------\n";
             std::cout << "1. Plan to Read\n";
