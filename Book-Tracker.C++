@@ -44,12 +44,19 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
                 std::cout << "Genre: "; 
 
                 //invalid input conditionals (genre)
-                if (!(std::cin>>genre)) {
+                if (!(std::cin>>genre)) { // invalid varible that was inputted
 
                     std::cout << "INVALID: INPUT NUMBER" << std::endl;
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+                    continue;
+                } else if (genre < 1 || genre > 10) { // User didnt enter the available options 
+
+                    std::cout << "INVALID: Please enter the options that are available" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                
                     continue;
                 } else {
 
