@@ -10,7 +10,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
         //attributes (traits)
         std::string title; 
         std::string author; 
-        std::string genre;  
+        int genre;  
         int progress; 
         int pages;
         int rating;
@@ -38,7 +38,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
             std::cout << "7. Historical Fiction\n";
             std::cout << "8. Historical\n";
             std::cout << "9. Self-Help/Philosophy\n";
-            std::cout << "10. Other\n";
+            std::cout << "10. Other/Multiple" << std::endl;
             std::cout << "Genre: ";
             std::cin >> genre;  
 
@@ -152,7 +152,45 @@ main(){
                             myFile << "-------------------------" << std::endl; // for readability
                             myFile << "Title: " << Books[i].title << std::endl; 
                             myFile << "Author: " << Books[i].author << std::endl;
-                            myFile << "Genre: " << Books[i].genre << std::endl;
+
+                            //Genre Condtionals logic
+                            myFile << "Genre: "; 
+                            if (Books[i].genre == 1) { // Romance
+
+                                myFile << "Romace (1)" << std::endl;
+                            } else if (Books[i].genre == 2) { // Fantasy 
+
+                                myFile << "Fantasy (2)" << std::endl;
+                            } else if (Books[i].genre == 3) { // Mystery/Crime
+
+                                myFile << "Mystery/Crime (3)" << std::endl;
+                            } else if (Books[i].genre == 4) { // Horror
+
+                                myFile << "Horror (4)" << std::endl;
+                            } else if (Books[i].genre == 5) { // Thriller/Suspens
+
+                                myFile << "Thriller/Suspense (5)" << std::endl;
+                            } else if (Books[i].genre == 6) { // History Fiction
+
+                                myFile << "Historical Fiction (6)" << std::endl;
+                            } else if (Books[i].genre == 7) { // Historical
+
+                                myFile << "Historical (7)" << std::endl;
+                            } else if (Books[i].genre == 8) { // Sci Fi
+
+                                myFile << "Science Fiction/Sci-Fi (8)" << std::endl;
+                            } else if (Books[i].genre == 9) { // Self Help/ Philosphy
+
+                                myFile << "Self Gelp/Philosophy (9)" << std::endl;
+                            } else if (Books[i].genre == 10) { // Other/Multiple
+
+                                myFile << "Other/Mutiple (10)" << std::endl;
+                            }
+                            
+                            
+                            
+
+                            // Progress condtionals logic
                             myFile << "Progress: ";
                             if (Books[i].progress == 1) {
 

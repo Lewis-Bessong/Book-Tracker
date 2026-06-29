@@ -1,8 +1,5 @@
 -------------------------
 Title: t
 Author: t
-Genre: t
-Progress: 3 (Completed Book)
-Pages: 5
-Rating (1-10): 8
-------------------
+Genre: 10
+Progress: 2 (Currently Reading)
