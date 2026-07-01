@@ -64,10 +64,24 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
             } while (true);            
 
-            // Need conditional
-            std::cout << "Pages: ";
-            std::cin >> pages;
-   
+            do { // Pages
+
+                std::cout << "Pages: ";
+
+                if (!(std::cin >> pages)) {
+
+                    std::cout << "INVALID: INPUT NUMBER" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                    continue;
+                } else {
+
+                    break;
+                }
+
+            } while (true);
+            
             //need conditional
             std::cout << "Progress (Input #)\n" ;
             std::cout << "--------------------\n";
