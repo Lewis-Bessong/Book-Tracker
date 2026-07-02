@@ -355,7 +355,7 @@ main(){
                             myFile.open("books.txt", std::ios::app); {
                                 if (myFile.is_open()) {
                                 
-                                
+                                    // add some info that comes from what the user stored within the loop 
                                     myFile << "OOOOOOOOOOOOOOOOOOOOOOOOOO" << std::endl;
 
                                     myFile.close();
