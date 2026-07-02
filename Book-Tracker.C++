@@ -342,6 +342,7 @@ main(){
                         } while (true);
 
                         for (int i = 0; i < Books.size(); i++) { // testing file within loop to see the flow
+                            
                             myFile.open("books.txt", std::ios::app); {
                                 if (myFile.is_open()) {
                                 
@@ -388,7 +389,6 @@ main(){
                                     myFile << "Pages: " << Books[i].pages << std::endl;
 
                                     //Progress + Rating Conditonals
-                                    
                                     myFile << "Progress: ";
                                     if (Books[i].progress == 1) { // for if user is planning reading
 
