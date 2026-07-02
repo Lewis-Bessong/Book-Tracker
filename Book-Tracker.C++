@@ -348,8 +348,23 @@ main(){
                                 std::cout << "WRONG INPUT" << std::endl;
                             }
 
+
                         } while (true);
 
+                        for (int i = 0; i < Books.size(); i++) { // testing file within loop to see the flow
+                            myFile.open("books.txt", std::ios::app); {
+                                if (myFile.is_open()) {
+                                
+                                
+                                    myFile << "OOOOOOOOOOOOOOOOOOOOOOOOOO" << std::endl;
+
+                                    myFile.close();
+                                }
+                            }
+
+                        }
+
+                        break;
                     } if (SaveOption == 2) { // breaks out while loop if want to stop saving 
 
                         break;
