@@ -356,8 +356,19 @@ main(){
                                 if (myFile.is_open()) {
                                 
                                     // add some info that comes from what the user stored within the loop 
-                                    myFile << "OOOOOOOOOOOOOOOOOOOOOOOOOO" << std::endl;
+                                    myFile << "------------------" << std::endl;
+                                    myFile << "Title: " << Books[i].title << std::endl;
+                                    myFile << "Author: " << Books[i].author << std::endl;
 
+                                    myFile << "Genre: "; 
+                                    if (Books[i].genre == 1) {
+
+                                        myFile << "Romance" << std::endl;
+                                        
+                                    }
+
+
+                                    
                                     myFile.close();
                                 }
                             }
@@ -487,15 +498,68 @@ main(){
 
 /*
 
-// For Rating depending on book progress
-                        if (Books[i].progress = 1) {
-                            break;
-                            
-                        } else if (Books[i].progress = 2) {
-                            break;
-                                               
-                        } else if (Books[i].progress = 3) { // if completed then show rating
+                                    //Genre Condtionals logic
+                                    myFile << "Genre: "; 
+                                    if (Books[i].genre == 1) { // Romance
 
-                            myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                        }
+                                        myFile << "Romace (1)" << std::endl;
+                                    } else if (Books[i].genre == 2) { // Fantasy 
+
+                                        myFile << "Fantasy (2)" << std::endl;
+                                    } else if (Books[i].genre == 3) { // Mystery/Crime
+
+                                        myFile << "Mystery/Crime (3)" << std::endl;
+                                    } else if (Books[i].genre == 4) { // Horror
+
+                                        myFile << "Horror (4)" << std::endl;
+                                    } else if (Books[i].genre == 5) { // Thriller/Suspens
+
+                                        myFile << "Thriller/Suspense (5)" << std::endl;
+                                    } else if (Books[i].genre == 6) { // History Fiction
+
+                                        myFile << "Historical Fiction (6)" << std::endl;
+                                    } else if (Books[i].genre == 7) { // Historical
+
+                                        myFile << "Historical (7)" << std::endl;
+                                    } else if (Books[i].genre == 8) { // Sci Fi
+
+                                        myFile << "Science Fiction/Sci-Fi (8)" << std::endl;
+                                    } else if (Books[i].genre == 9) { // Self Help/ Philosphy
+
+                                        myFile << "Self Gelp/Philosophy (9)" << std::endl;
+                                    } else if (Books[i].genre == 10) { // Other/Multiple
+
+                                        myFile << "Other/Mutiple (10)" << std::endl;
+                                    }
+                            
+                            
+                                    // Progress condtionals logic
+                                    myFile << "Progress: ";
+                                    if (Books[i].progress == 1) {
+
+                                        myFile << "Plan To Read (1)" << std::endl;
+                                        break;
+                                    } else if (Books[i].progress == 2) {
+
+                                        myFile << "Currently Reading (2)" << std::endl;
+                                        break; 
+                                    } else if (Books[i].progress == 3) {
+
+                                        myFile << "Completed Book (3)" << std::endl;
+                                    }
+
+                                    myFile << "Pages: " << Books[i].pages << std::endl;
+
+                                    // For Rating depending on book progress
+                                    if (Books[i].progress == 1) {
+
+                                        break;
+                                    } else if (Books[i].progress == 2) {
+                    
+                                        break;
+                                    } else if (Books[i].progress == 3) { // if completed then show rating
+
+                                     myFile << "Rating (1-10): " << Books[i].rating << std::endl;
+                                    }
+
 */

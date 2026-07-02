@@ -3,4 +3,7 @@ Title: t
 Author: t
 Genre: Romace (1)
 Progress: Plan To Read (1)
-OOOOOOOOOOOOOOOOOOOOOOOOOO
+------------------
+Title: y
+Author: y
+Genre: Romance
