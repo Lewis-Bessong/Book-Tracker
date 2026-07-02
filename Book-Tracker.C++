@@ -82,15 +82,35 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
             } while (true);
             
-            //need conditional
-            std::cout << "Progress (Input #)\n" ;
-            std::cout << "--------------------\n";
-            std::cout << "1. Plan to Read\n";
-            std::cout << "2. Curretly Reading\n";
-            std::cout << "3. Completed Book" << std:: endl;
-            std::cout << "Enter Here: ";
-            std::cin >> progress;
+            do { // Progress 
+                std::cout << "Progress (Input #)\n" ;
+                std::cout << "--------------------\n";
+                std::cout << "1. Plan to Read\n";
+                std::cout << "2. Curretly Reading\n";
+                std::cout << "3. Completed Book" << std:: endl;
+                std::cout << "Enter Here: ";
 
+                if (!(std::cin >> progress)) { // for non number input 
+
+                    std::cout << "INVALID INPUT: INPUT NUMBER" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                    continue;
+                } else if (progress < 1 || progress > 3) { // for input other than 1,2 or 3 
+
+                    std::cout << "INVLAID INPUT: ENTER THE OPTIONS AVAILABLE" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                    continue;
+                } else { // valid input
+
+                    break;
+                }
+            } while (true);
+
+            
             // conditional for rating (depending on progress)
             if (progress == 1) {
                 //empty
@@ -98,8 +118,30 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
                 //empty
             } else if (progress == 3) {
 
-                std::cout << "Rating (1 = really bad, 10 = really good): ";
-                std::cin >> rating;
+                do { // Rating 
+
+                    std::cout << "Rating (1 = really bad, 10 = really good): ";
+
+                    if (!(std::cin >> rating)) { // for non number input
+
+                        std::cout << "INVALID INPUT: ENTER A NUMBER" << std::endl;
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        
+                        continue;
+                    } else if (rating < 1 || rating > 10) { // for input thats out of the 1-10 range
+
+                        std::cout << "INVALID INPUT: ENTER ONLY FROM 1-10" << std::endl;
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                        continue;
+                    } else { // valid input
+
+                        break;
+                    }
+
+                } while (true);
             }
 
         };
