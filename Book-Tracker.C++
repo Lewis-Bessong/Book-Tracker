@@ -266,8 +266,10 @@ main(){
                                 myFile << "Other/Mutiple (10)" << std::endl;
                             }
                             
-                            
-                            // Progress condtionals logic
+                            // Pages
+                            myFile << "Pages: " << Books[i].pages << std::endl;
+
+                            // Progress + Rating condtionals logic
                             myFile << "Progress: ";
                             if (Books[i].progress == 1) {
 
@@ -280,21 +282,9 @@ main(){
                             } else if (Books[i].progress == 3) {
 
                                 myFile << "Completed Book (3)" << std::endl;
-                            }
-
-                            myFile << "Pages: " << Books[i].pages << std::endl;
-
-                            // For Rating depending on book progress
-                            if (Books[i].progress == 1) {
-
-                                break;
-                            } else if (Books[i].progress == 2) {
-                    
-                                break;
-                            } else if (Books[i].progress == 3) { // if completed then show rating
-
                                 myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                            }                         
+                            }
+                        
                             myFile.close();
                         }
 
@@ -394,22 +384,26 @@ main(){
                                         myFile << "Other/Mutiple (10)" << std::endl;
                                     }
                                     
+                                    // Pages
+                                    myFile << "Pages: " << Books[i].pages << std::endl;
 
-                                    // Progress condtionals logic
+                                    //Progress + Rating Conditonals
+                                    
                                     myFile << "Progress: ";
-                                    if (Books[i].progress == 1) {
+                                    if (Books[i].progress == 1) { // for if user is planning reading
 
                                         myFile << "Plan To Read (1)" << std::endl;
                                         break;
-                                    } else if (Books[i].progress == 2) {
+                                    } else if (Books[i].progress == 2) { // for if user is still reading
 
                                         myFile << "Currently Reading (2)" << std::endl;
                                         break; 
-                                    } else if (Books[i].progress == 3) {
+                                    } else if (Books[i].progress == 3) { // for if user has completed it so it also outputs their rating
 
                                         myFile << "Completed Book (3)" << std::endl;
+                                        myFile << "Rating (1-10): " << Books[i].rating << std::endl;
                                     }
-                                    
+
                                     myFile.close();
                                 }
                             }
