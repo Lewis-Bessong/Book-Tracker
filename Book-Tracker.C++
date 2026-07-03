@@ -99,50 +99,50 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
                     continue;
                 } else if (progress < 1 || progress > 3) { // for input other than 1,2 or 3 
 
-                    std::cout << "INVLAID INPUT: ENTER THE OPTIONS AVAILABLE" << std::endl;
+                    std::cout << "INVLAID INPUT: Enter the options that are available" << std::endl;
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
                     continue;
                 } else { // valid input
 
-                    break;
-                }
-            } while (true);
+                    if (progress == 3) { // does rating if 3
 
-            
-            // conditional for rating (depending on progress)
-            if (progress == 1) {
-                //empty
-            } else if (progress == 2) {
-                //empty
-            } else if (progress == 3) {
+                        do { // Rating 
 
-                do { // Rating 
+                            std::cout << "Rating (1 = really bad, 10 = really good): ";
 
-                    std::cout << "Rating (1 = really bad, 10 = really good): ";
+                            if (!(std::cin >> rating)) { // for non number input
 
-                    if (!(std::cin >> rating)) { // for non number input
-
-                        std::cout << "INVALID INPUT: ENTER A NUMBER" << std::endl;
-                        std::cin.clear();
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                std::cout << "INVALID INPUT: ENTER A NUMBER" << std::endl;
+                                std::cin.clear();
+                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         
-                        continue;
-                    } else if (rating < 1 || rating > 10) { // for input thats out of the 1-10 range
+                                continue;
+                            } else if (rating < 1 || rating > 10) { // for input thats out of the 1-10 range
 
-                        std::cout << "INVALID INPUT: ENTER ONLY FROM 1-10" << std::endl;
-                        std::cin.clear();
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                std::cout << "INVALID INPUT: ENTER ONLY FROM 1-10" << std::endl;
+                                std::cin.clear();
+                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-                        continue;
-                    } else { // valid input
+                                continue;
+                            } else { // valid input
+
+                                break;
+                            }
+
+                        } while (true);
+
+                    } else if ( progress == 1 || progress == 2) { // skips rating if not 3
 
                         break;
                     }
 
-                } while (true);
-            }
+                    break; // to get out of loop
+                }
+
+            } while (true);
+
 
         };
 
@@ -448,71 +448,16 @@ main(){
                
 }
 
-
 /*
 
-                                    //Genre Condtionals logic
-                                    myFile << "Genre: "; 
-                                    if (Books[i].genre == 1) { // Romance
 
-                                        myFile << "Romace (1)" << std::endl;
-                                    } else if (Books[i].genre == 2) { // Fantasy 
 
-                                        myFile << "Fantasy (2)" << std::endl;
-                                    } else if (Books[i].genre == 3) { // Mystery/Crime
+                                    
 
-                                        myFile << "Mystery/Crime (3)" << std::endl;
-                                    } else if (Books[i].genre == 4) { // Horror
 
-                                        myFile << "Horror (4)" << std::endl;
-                                    } else if (Books[i].genre == 5) { // Thriller/Suspens
 
-                                        myFile << "Thriller/Suspense (5)" << std::endl;
-                                    } else if (Books[i].genre == 6) { // History Fiction
 
-                                        myFile << "Historical Fiction (6)" << std::endl;
-                                    } else if (Books[i].genre == 7) { // Historical
 
-                                        myFile << "Historical (7)" << std::endl;
-                                    } else if (Books[i].genre == 8) { // Sci Fi
 
-                                        myFile << "Science Fiction/Sci-Fi (8)" << std::endl;
-                                    } else if (Books[i].genre == 9) { // Self Help/ Philosphy
-
-                                        myFile << "Self Gelp/Philosophy (9)" << std::endl;
-                                    } else if (Books[i].genre == 10) { // Other/Multiple
-
-                                        myFile << "Other/Mutiple (10)" << std::endl;
-                                    }
-                            
-                            
-                                    // Progress condtionals logic
-                                    myFile << "Progress: ";
-                                    if (Books[i].progress == 1) {
-
-                                        myFile << "Plan To Read (1)" << std::endl;
-                                        break;
-                                    } else if (Books[i].progress == 2) {
-
-                                        myFile << "Currently Reading (2)" << std::endl;
-                                        break; 
-                                    } else if (Books[i].progress == 3) {
-
-                                        myFile << "Completed Book (3)" << std::endl;
-                                    }
-
-                                    myFile << "Pages: " << Books[i].pages << std::endl;
-
-                                    // For Rating depending on book progress
-                                    if (Books[i].progress == 1) {
-
-                                        break;
-                                    } else if (Books[i].progress == 2) {
-                    
-                                        break;
-                                    } else if (Books[i].progress == 3) { // if completed then show rating
-
-                                     myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                                    }
 
 */
