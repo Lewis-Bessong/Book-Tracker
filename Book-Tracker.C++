@@ -454,6 +454,7 @@ main(){
                                         myFile << "Rating (1-10): " << Books[i].rating << std::endl;
                                         break;
                                     }
+                                        
                                     
 
 
