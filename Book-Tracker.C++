@@ -82,7 +82,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
             } while (true);
             
-            do { // Progress 
+            do { // Progress + Rating
                 std::cout << "Progress (Input #)\n" ;
                 std::cout << "--------------------\n";
                 std::cout << "1. Plan to Read\n";
@@ -121,7 +121,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
                                 continue;
                             } else if (rating < 1 || rating > 10) { // for input thats out of the 1-10 range
 
-                                std::cout << "INVALID INPUT: ENTER ONLY FROM 1-10" << std::endl;
+                                std::cout << "INVALID INPUT: Enter a number within 1-10" << std::endl;
                                 std::cin.clear();
                                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
@@ -133,7 +133,8 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
                         } while (true);
 
-                    } else if ( progress == 1 || progress == 2) { // skips rating if not 3
+                    } else if (progress == 1 || progress == 2) { // skips rating if not 3
+
 
                         break;
                     }
@@ -283,6 +284,7 @@ main(){
 
                                 myFile << "Completed Book (3)" << std::endl;
                                 myFile << "Rating (1-10): " << Books[i].rating << std::endl;
+                                break;
                             }
                         
                             myFile.close();
@@ -388,21 +390,6 @@ main(){
                                     // Pages
                                     myFile << "Pages: " << Books[i].pages << std::endl;
 
-                                    //Progress + Rating Conditonals
-                                    myFile << "Progress: ";
-                                    if (Books[i].progress == 1) { // for if user is planning reading
-
-                                        myFile << "Plan To Read (1)" << std::endl;
-                                        break;
-                                    } else if (Books[i].progress == 2) { // for if user is still reading
-
-                                        myFile << "Currently Reading (2)" << std::endl;
-                                        break; 
-                                    } else if (Books[i].progress == 3) { // for if user has completed it so it also outputs their rating
-
-                                        myFile << "Completed Book (3)" << std::endl;
-                                        myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                                    }
                                     
                                     myFile.close();
                                 }
@@ -449,7 +436,23 @@ main(){
 /*
 
 
+//Progress + Rating Conditonals
+                                    myFile << "Progress: ";
+                                    if (Books[i].progress == 1) { // for if user is planning reading
 
+                                        myFile << "Plan To Read (1)" << std::endl;
+                                        break;
+                                    } else if (Books[i].progress == 2) { // for if user is still reading
+
+                                        myFile << "Currently Reading (2)" << std::endl;
+                                        break; 
+                                    } else if (Books[i].progress == 3) { // for if user has completed it so it also outputs their rating
+
+                                        myFile << "Completed Book (3)" << std::endl;
+                                        myFile << "Rating (1-10): " << Books[i].rating << std::endl;
+                                        break;
+                                    }
+                                        
                                     
 
 

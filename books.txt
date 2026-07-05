@@ -1,6 +1,32 @@
 -------------------------
-Title: ty
-Author: ty
+Title: t
+Author: t
+Genre: Romace (1)
+Pages: 2
+Progress: Plan To Read (1)
+------------------
+Title: y
+Author: y
+Genre: Horror (4)
+Pages: 4
+-------------------------
+Title: t
+Author: t
+Genre: Romace (1)
+Pages: 2
+Progress: Plan To Read (1)
+------------------
+Title: y
+Author: y
+Genre: Horror (4)
+Pages: 4
+------------------
+Title: op 
+Author: op
 Genre: Mystery/Crime (3)
-Pages: 789
-Progress: Currently Reading (2)
+Pages: 3
+------------------
+Title: 
+Author: b
+Genre: Historical Fiction (6)
+Pages: 6
