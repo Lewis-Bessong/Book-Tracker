@@ -441,13 +441,11 @@ main(){
             default: // ===== INVALID INPUT CASE =====
 
                 std::cout << "WRONG INPUT." << std::endl;
-
         }
 
     } while (MenuOption != 3); // do block will be repeated if this condition happens
                
 }
-
 /*
 
 
