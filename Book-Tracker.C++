@@ -390,8 +390,15 @@ main(){
                                     // Pages
                                     myFile << "Pages: " << Books[i].pages << std::endl;
 
-                                    
+                                    //progess
+                                    myFile << "Progress: ";
+                                    if (Books[i].progress == 1) {
+
+                                        myFile << "Plan To Read (1)" << std::endl;
+                                    }
+
                                     myFile.close();
+                                    
                                 }
                             }
 
