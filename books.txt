@@ -1,12 +1,21 @@
 -------------------------
 Title: ty
 Author: ty
-Genre: Horror (4)
-Pages: 456
-Progress: Currently Reading (2)
-------------------
-Title: op
-Author: op
-Genre: Fantasy (2)
-Pages: 678
+Genre: Romace (1)
+Pages: 4567
 Progress: Completed Book (3)
+Rating (1-10): 6
+------------------------
+Title: tg
+Author: tg
+Genre: Fantasy (2)
+Pages: 543454
+Progress: Completed Book (3)
+Rating (1-10): 7
+------------------------
+Title: tj
+Author: tj
+Genre: Mystery/Crime (3)
+Pages: 6564
+Progress: Completed Book (3)
+Rating (1-10): 5

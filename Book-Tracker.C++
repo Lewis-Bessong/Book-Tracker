@@ -401,6 +401,7 @@ main(){
                                     } else if (Books[i].progress == 3) {
 
                                         myFile << "Completed Book (3)" << std::endl;
+                                        myFile << "Rating (1-10): " << Books[i].rating << std::endl;
                                     }
 
                                     myFile.close();
