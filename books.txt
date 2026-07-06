@@ -1,12 +1,18 @@
 -------------------------
 Title: t
 Author: t
-Genre: Romace (1)
-Pages: 1
+Genre: Fantasy (2)
+Pages: 2
 Progress: Plan To Read (1)
 ------------------
 Title: u
 Author: u
+Genre: Fantasy (2)
+Pages: 2
+Progress: Currently Reading (2)
+-------------------------
+Title: t
+Author: t
 Genre: Fantasy (2)
 Pages: 2
 Progress: Plan To Read (1)

@@ -395,6 +395,9 @@ main(){
                                     if (Books[i].progress == 1) {
 
                                         myFile << "Plan To Read (1)" << std::endl;
+                                    } else if (Books[i].progress == 2) {
+
+                                        myFile << "Currently Reading (2)" << std::endl;
                                     }
 
                                     myFile.close();
