@@ -349,7 +349,7 @@ main(){
                                 if (myFile.is_open()) {
                                 
                                     // add some info that comes from what the user stored within the loop 
-                                    myFile << "------------------" << std::endl;
+                                    myFile << "------------------------" << std::endl;
                                     myFile << "Title: " << Books[i].title << std::endl;
                                     myFile << "Author: " << Books[i].author << std::endl;
 
@@ -398,6 +398,9 @@ main(){
                                     } else if (Books[i].progress == 2) {
 
                                         myFile << "Currently Reading (2)" << std::endl;
+                                    } else if (Books[i].progress == 3) {
+
+                                        myFile << "Completed Book (3)" << std::endl;
                                     }
 
                                     myFile.close();
