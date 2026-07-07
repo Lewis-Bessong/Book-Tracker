@@ -1,12 +1,39 @@
 -------------------------
-Title: ty
-Author: ty
-Genre: Horror (4)
-Pages: 456
-Progress: Currently Reading (2)
-------------------
-Title: op
-Author: op
-Genre: Fantasy (2)
-Pages: 678
+Title: death note
+Author: shinigami
+Genre: Thriller/Suspense (5)
+Pages: 150
 Progress: Completed Book (3)
+Rating (1-10): 7
+------------------------
+Title: think
+Author: idk
+Genre: Self Gelp/Philosophy (9)
+Pages: 678
+Progress: Currently Reading (2)
+-------------------------
+Title: death note
+Author: shinigami
+Genre: Thriller/Suspense (5)
+Pages: 150
+Progress: Completed Book (3)
+Rating (1-10): 7
+------------------------
+Title: think
+Author: idk
+Genre: Self Gelp/Philosophy (9)
+Pages: 678
+Progress: Currently Reading (2)
+------------------------
+Title: world history: modern
+Author: the world
+Genre: Science Fiction/Sci-Fi (8)
+Pages: 500
+Progress: Completed Book (3)
+Rating (1-10): 1
+------------------------
+Title: cookbook
+Author: idk
+Genre: Self Gelp/Philosophy (9)
+Pages: 180
+Progress: Plan To Read (1)
