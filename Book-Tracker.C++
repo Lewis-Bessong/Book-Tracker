@@ -242,8 +242,7 @@ main(){
                 Book.BookInput(); // User inputs info           
                 Books.push_back(Book); // book gets stored (short term)
 
-                // info gets stored in file (long term)
-                 
+                // info gets stored in file (long term)             
  
                 for (int i = 0; i < Books.size(); i++) {
                     myFile.open("books.txt", std::ios::app); {
