@@ -3,6 +3,11 @@
 #include <vector>
 #include <limits>
 #include <fstream>
+#include <chrono>
+#include <thread>
+
+using namespace std::chrono_literals; 
+using namespace std::chrono;
 
 // Book class for what a book needs 
 struct BookBlueprint { // 'struct' to keep everything together regardless of data type
@@ -149,6 +154,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
 };
 
+
 void Menu() { // Starting menu for user (Seeing what the program can do)  
 
     std::cout << "Book Tracker Menu.\n";
@@ -195,6 +201,19 @@ main(){
         myFile.close();
     }
     
+    // ======= USER INTERACTION ======
+
+    auto two_seconds = 2s; // duration of 2 seconds
+    std::cout << "Hello !" << std::endl;
+
+    std::this_thread::sleep_for(two_seconds); // program stops for 2s
+
+    std::cout << "Welcome to....." << std::endl;
+
+    std::this_thread::sleep_for(two_seconds);
+
+    std::cout << "The Book Tracker !" << std::endl;
+
     // ======== SYSTEM LOGIC ========
 
     // Looped Menu output, user input, and conditionals (switch statments)
@@ -442,13 +461,11 @@ main(){
             default: // ===== INVALID INPUT CASE =====
 
                 std::cout << "WRONG INPUT." << std::endl;
-
         }
 
     } while (MenuOption != 3); // do block will be repeated if this condition happens
                
 }
-
 /*
 
 
