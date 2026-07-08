@@ -400,8 +400,8 @@ main(){
                                         myFile << "Science Fiction/Sci-Fi (8)" << std::endl;
                                     } else if (Book.genre == 9) { // Self Help/ Philosphy
 
-                                        myFile << "Self Gelp/Philosophy (9)" << std::endl;
-                                    } else if (Book.rating == 10) { // Other/Multiple
+                                        myFile << "Self Help/Philosophy (9)" << std::endl;
+                                    } else if (Books[i].genre == 10) { // Other/Multiple
 
                                         myFile << "Other/Mutiple (10)" << std::endl;
                                     }
