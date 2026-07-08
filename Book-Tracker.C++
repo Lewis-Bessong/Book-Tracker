@@ -242,11 +242,10 @@ main(){
                 Book.BookInput(); // User inputs info           
                 Books.push_back(Book); // book gets stored (short term)
 
-                // info gets stored in file (long term)             
- 
-                for (int i = 0; i < Books.size(); i++) {
-                    myFile.open("books.txt", std::ios::app); {
-                        if (myFile.is_open()){
+                // info gets stored in file (long term)                
+                myFile.open("books.txt", std::ios::app); {
+                    if (myFile.is_open()){
+                        for (int i = 0; i < Books.size(); i++) {
 
                             myFile << "-------------------------" << std::endl; // for readability
                             myFile << "Title: " << Books[i].title << std::endl; 
@@ -256,7 +255,7 @@ main(){
                             myFile << "Genre: "; 
                             if (Books[i].genre == 1) { // Romance
 
-                             myFile << "Romace (1)" << std::endl;
+                            myFile << "Romace (1)" << std::endl;
                             } else if (Books[i].genre == 2) { // Fantasy 
 
                                 myFile << "Fantasy (2)" << std::endl;
@@ -304,12 +303,12 @@ main(){
                                 myFile << "Completed Book (3)" << std::endl;
                                 myFile << "Rating (1-10): " << Books[i].rating << std::endl;
                                 break;
-                            }
-                        
-                            myFile.close();
+                            }                      
+                          
                         }
-                    }
-                    
+
+                        myFile.close();
+                    }  
                 }
 
                 // ===== LOOPED SAVE OPTION/LOGIC ===== 
@@ -362,10 +361,11 @@ main(){
 
                         } while (true);
 
-                        for (int i = 0; i < Books.size(); i++) { // testing file within loop to see the flow
-                            
-                            myFile.open("books.txt", std::ios::app); {
-                                if (myFile.is_open()) {
+                        
+                        // testing file within loop to see the flow    
+                        myFile.open("books.txt", std::ios::app); {
+                            if (myFile.is_open()) {
+                                for (int i = 0; i < Books.size(); i++) {
                                 
                                     // add some info that comes from what the user stored within the loop 
                                     myFile << "------------------------" << std::endl;
@@ -423,12 +423,12 @@ main(){
                                         myFile << "Rating (1-10): " << Books[i].rating << std::endl;
                                     }
 
-                                    myFile.close();
+                                }  
                                     
-                                }
+                                myFile.close();
                             }
-
                         }
+                        
 
                         break;
                     } if (SaveOption == 2) { // breaks out while loop if want to stop saving 

@@ -1,36 +1,18 @@
 -------------------------
-Title: save 1
-Author: save 1
+Title: ty
+Author: ty
 Genre: Romace (1)
 Pages: 1
 Progress: Plan To Read (1)
 ------------------------
-Title: repeated save 2 (from 1)
-Author: repeated save 2 (from 1)
-Genre: Fantasy (2)
-Pages: 2
-Progress: Plan To Read (1)
--------------------------
-Title: save 1
-Author: save 1
+Title: ty
+Author: ty
 Genre: Romace (1)
 Pages: 1
 Progress: Plan To Read (1)
 ------------------------
-Title: repeated save 2 (from 1)
-Author: repeated save 2 (from 1)
+Title: y
+Author: y
 Genre: Fantasy (2)
 Pages: 2
-Progress: Plan To Read (1)
-------------------------
-Title: save 1.0 ( After stopping to save, following save 2)
-Author: save 1.0
-Genre: Other/Mutiple (10)
-Pages: 10
-Progress: Plan To Read (1)
-------------------------
-Title: save 2.0 ( Repeated save of save 1.0)
-Author: save 2.0 
-Genre: Fantasy (2)
-Pages: 20
-Progress: Plan To Read (1)
+Progress: Currently Reading (2)
