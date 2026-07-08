@@ -466,32 +466,3 @@ main(){
     } while (MenuOption != 3); // do block will be repeated if this condition happens
                
 }
-/*
-
-
-//Progress + Rating Conditonals
-                                    myFile << "Progress: ";
-                                    if (Books[i].progress == 1) { // for if user is planning reading
-
-                                        myFile << "Plan To Read (1)" << std::endl;
-                                        break;
-                                    } else if (Books[i].progress == 2) { // for if user is still reading
-
-                                        myFile << "Currently Reading (2)" << std::endl;
-                                        break; 
-                                    } else if (Books[i].progress == 3) { // for if user has completed it so it also outputs their rating
-
-                                        myFile << "Completed Book (3)" << std::endl;
-                                        myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                                        break;
-                                    }
-                                        
-                                    
-
-
-
-
-
-
-
-*/
