@@ -154,7 +154,6 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
 };
 
-
 void Menu() { // Starting menu for user (Seeing what the program can do)  
 
     std::cout << "Book Tracker Menu.\n";
@@ -177,6 +176,18 @@ void SaveMode() {
 
 }
 
+void MoodEval() {
+
+    std::cout << "How are you ??\n";
+    std::cout << "----------------\n";
+    std::cout << "1. Good\n";
+    std::cout << "2. Happy\n";
+    std::cout << "3. Sad\n";
+    std::cout << "4. Mad" << std::endl;
+    std::cout << ": ";  
+
+}
+
 main(){
 
     // ======= BOOK TRACKER TOOLS ========
@@ -184,6 +195,7 @@ main(){
     // variables
     int MenuOption;
     int SaveOption;
+    int UserEval;
 
     //container for books (stores/organizes data)
     std::vector<BookBlueprint> Books; //contains objects from the "Book" class
@@ -203,16 +215,68 @@ main(){
     
     // ======= USER INTERACTION ======
 
+    auto one_second = 1s; 
     auto two_seconds = 2s; // duration of 2 seconds
-    std::cout << "Hello !" << std::endl;
+    std::cout << "Hello !!!" << std::endl;
 
     std::this_thread::sleep_for(two_seconds); // program stops for 2s
 
-    std::cout << "Welcome to....." << std::endl;
+    do {
 
-    std::this_thread::sleep_for(two_seconds);
+        MoodEval();
 
-    std::cout << "The Book Tracker !" << std::endl;
+        if (!(std::cin >> UserEval)) { // non number input
+
+            std::cout << "Okay so.." << std:: endl;
+            std::this_thread::sleep_for(one_second);
+            std::cout << "Enter a NUMBER" << std::endl;
+            std::this_thread::sleep_for(one_second);
+            std::cout << "Like 1, 2, 3, 4" << std::endl;
+            std::this_thread::sleep_for(one_second);
+            std::cin.clear(); // resets fail 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
+
+            continue;  
+        }
+
+        if (UserEval == 1 || UserEval == 2) {
+
+            std::cout << "Thats good to hear!" << std::endl;
+            std::this_thread::sleep_for(one_second); 
+            std::cout << "but.." << std::endl;
+            std::this_thread::sleep_for(two_seconds); // program stops for 2s
+            std::cout << "you'll be happier once you save your book :)" << std::endl;
+            std::this_thread::sleep_for(two_seconds); // program stops for 2s
+            std::cout << "Enjoy!" << std::endl;
+            std::this_thread::sleep_for(one_second);
+
+            break;
+        } else if (UserEval == 3 || UserEval == 4) {
+
+            std::cout << "Wow" << std::endl; 
+            std::this_thread::sleep_for(one_second);
+            std::cout << "Well thank you for still using us when you feel like that" << std::endl; 
+            std::this_thread::sleep_for(two_seconds);
+            std::cout << "Enjoy and cheer up, life is short!" << std::endl; 
+            std::this_thread::sleep_for(two_seconds);
+
+            break;
+        } else {
+
+            std::cout << "Ouuu we did not understand.." << std::endl;
+            std::this_thread::sleep_for(one_second);
+            std::cout << "Ha\n";
+            std::this_thread::sleep_for(one_second);
+            std::cout << "Ha?\n"; 
+            std::this_thread::sleep_for(one_second);
+            std::cout << "Please try again..." << std::endl;
+            std::this_thread::sleep_for(one_second);
+
+            continue;
+        }
+    
+    } while(true);
+     
 
     // ======== SYSTEM LOGIC ========
 
@@ -465,33 +529,4 @@ main(){
 
     } while (MenuOption != 3); // do block will be repeated if this condition happens
                
-}
-/*
-
-
-//Progress + Rating Conditonals
-                                    myFile << "Progress: ";
-                                    if (Books[i].progress == 1) { // for if user is planning reading
-
-                                        myFile << "Plan To Read (1)" << std::endl;
-                                        break;
-                                    } else if (Books[i].progress == 2) { // for if user is still reading
-
-                                        myFile << "Currently Reading (2)" << std::endl;
-                                        break; 
-                                    } else if (Books[i].progress == 3) { // for if user has completed it so it also outputs their rating
-
-                                        myFile << "Completed Book (3)" << std::endl;
-                                        myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                                        break;
-                                    }
-                                        
-                                    
-
-
-
-
-
-
-
-*/
+} 
