@@ -5,7 +5,8 @@ The Book Tracker is a special tracker that any book worm can use to save their f
 ### Current Fuctions
 - Saving Books
 - Viewing Saved Books
-- Stopping Program
+- Stop Program Option
+- User Interaction system 
 
 ### Future Functions
 - Book wishlist
@@ -14,10 +15,12 @@ The Book Tracker is a special tracker that any book worm can use to save their f
 - Filtered Saved Book Libarary(Favorites, Scary, Seasonal, etc.)
 
 ## Tools
-- Data structures 
+- Data structures/containers (Vector)
 - Loops
 - Class
-- 
+- Chrono w- algorithim
+- conditionals (if else, switch statements)
+- Fstream (read/write)
 
 
 ## Instructions
