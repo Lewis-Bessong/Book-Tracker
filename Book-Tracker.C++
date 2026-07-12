@@ -217,6 +217,7 @@ main(){
 
     auto one_second = 1s; 
     auto two_seconds = 2s; // duration of 2 seconds
+    auto four_sec = 4s;
     std::cout << "Hello !!!" << std::endl;
 
     std::this_thread::sleep_for(two_seconds); // program stops for 2s
@@ -509,14 +510,28 @@ main(){
                 // used to go back to menu 
                 std::cout << "Input Anything For Menu: "; 
                 std::cin >> DummyInput;
-                                                        
+                   
+                std::exit(0);
                 break;
 
             case 2: // ===== VIEW OPTION ===== 
+                
 
-                // in progess
+                // waits so program can process the saved info
+                std::cout << "Loading your books..." << std::endl;
+                std::this_thread::sleep_for(four_sec); 
 
-                break; 
+                // outputs contents within file
+                myFile.open("books.txt", std::ios::in); // read 
+                if (myFile.is_open()) {
+                    std::string line;
+                    while (getline(myFile, line)) {
+                        std::cout << line << std::endl;
+                    }
+                    myFile.close();
+                }
+ 
+                break;
             case 3: // ===== STOP PROGRAM OPTION =====
                  
                 std::cout << "Goodbye!" << std::endl;
