@@ -507,19 +507,17 @@ main(){
 
                 } while (SaveOption != 1 && SaveOption != 2);
 
+                // waits so program can process the saved info
+                std::cout << "Storing your books..." << std::endl;
+                std::this_thread::sleep_for(four_sec);
+
                 // used to go back to menu 
                 std::cout << "Input Anything For Menu: "; 
                 std::cin >> DummyInput;
                    
-                std::exit(0);
                 break;
 
             case 2: // ===== VIEW OPTION ===== 
-                
-
-                // waits so program can process the saved info
-                std::cout << "Loading your books..." << std::endl;
-                std::this_thread::sleep_for(four_sec); 
 
                 // outputs contents within file
                 myFile.open("books.txt", std::ios::in); // read 
