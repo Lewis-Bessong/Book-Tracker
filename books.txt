@@ -1,12 +1,25 @@
 -------------------------
-Title: ty
-Author: ty
+Title: The flash
+Author: lewis
 Genre: Romace (1)
-Pages: 234
-Progress: Currently Reading (2)
+Pages: 5678
+Progress: Plan To Read (1)
+------------------------
+Title: sdfsdf
+Author: sdgfd
+Genre: Other/Mutiple (10)
+Pages: 54646
+Progress: Completed Book (3)
+Rating (1-10): 8
 -------------------------
-Title: ty
-Author: ty
-Genre: Romace (1)
-Pages: 234
+Title: lewis
+Author: wew
+Genre: Fantasy (2)
+Pages: 445
+Progress: Plan To Read (1)
+------------------------
+Title: fsdfd
+Author: 34
+Genre: Horror (4)
+Pages: 454
 Progress: Currently Reading (2)
