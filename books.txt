@@ -1,25 +1,32 @@
 -------------------------
-Title: The flash
-Author: lewis
-Genre: Romace (1)
-Pages: 5678
+Title: the flash
+Author: idk
+Genre: Fantasy (2)
+Pages: 123
 Progress: Plan To Read (1)
 ------------------------
-Title: sdfsdf
-Author: sdgfd
-Genre: Other/Mutiple (10)
-Pages: 54646
+Title: lew
+Author: lew
+Genre: Romace (1)
+Pages: 345
+Progress: Currently Reading (2)
+------------------------
+Title: monkey
+Author: monkey
+Genre: Horror (4)
+Pages: 56557
 Progress: Completed Book (3)
 Rating (1-10): 8
--------------------------
-Title: lewis
-Author: wew
-Genre: Fantasy (2)
-Pages: 445
-Progress: Plan To Read (1)
 ------------------------
-Title: fsdfd
-Author: 34
-Genre: Horror (4)
-Pages: 454
-Progress: Currently Reading (2)
+Title: lopen
+Author: lopen
+Genre: Romace (1)
+Pages: 3243
+Progress: Plan To Read (1)
+-------------------------
+Title: ne
+Author: ne
+Genre: Romace (1)
+Pages: 12312
+Progress: Completed Book (3)
+Rating (1-10): 10
