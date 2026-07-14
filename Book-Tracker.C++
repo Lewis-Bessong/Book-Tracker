@@ -309,66 +309,64 @@ main(){
                 // info gets stored in file (long term)                
                 myFile.open("books.txt", std::ios::app); {
                     if (myFile.is_open()){
-                        for (int i = 0; i < Books.size(); i++) {
+                       
+                        myFile << "-------------------------" << std::endl; // for readability
+                        myFile << "Title: " << Books.back().title << std::endl; 
+                        myFile << "Author: " << Books.back().author << std::endl;
 
-                            myFile << "-------------------------" << std::endl; // for readability
-                            myFile << "Title: " << Books[i].title << std::endl; 
-                            myFile << "Author: " << Books[i].author << std::endl;
+                        //Genre Condtionals logic
+                        myFile << "Genre: "; 
+                        if (Books.back().genre == 1) { // Romance
 
-                            //Genre Condtionals logic
-                            myFile << "Genre: "; 
-                            if (Books[i].genre == 1) { // Romance
+                        myFile << "Romace (1)" << std::endl;
+                        } else if (Books.back().genre == 2) { // Fantasy 
 
-                            myFile << "Romace (1)" << std::endl;
-                            } else if (Books[i].genre == 2) { // Fantasy 
+                            myFile << "Fantasy (2)" << std::endl;
+                        } else if (Books.back().genre == 3) { // Mystery/Crime
 
-                                myFile << "Fantasy (2)" << std::endl;
-                            } else if (Books[i].genre == 3) { // Mystery/Crime
+                            myFile << "Mystery/Crime (3)" << std::endl;
+                        } else if (Books.back().genre == 4) { // Horror
 
-                                myFile << "Mystery/Crime (3)" << std::endl;
-                            } else if (Books[i].genre == 4) { // Horror
+                            myFile << "Horror (4)" << std::endl;
+                        } else if (Books.back().genre == 5) { // Thriller/Suspens
 
-                                myFile << "Horror (4)" << std::endl;
-                            } else if (Books[i].genre == 5) { // Thriller/Suspens
+                            myFile << "Thriller/Suspense (5)" << std::endl;
+                        } else if (Books.back().genre == 6) { // History Fiction
 
-                                myFile << "Thriller/Suspense (5)" << std::endl;
-                            } else if (Books[i].genre == 6) { // History Fiction
+                            myFile << "Historical Fiction (6)" << std::endl;
+                        } else if (Books.back().genre == 7) { // Historical
 
-                                myFile << "Historical Fiction (6)" << std::endl;
-                            } else if (Books[i].genre == 7) { // Historical
+                            myFile << "Historical (7)" << std::endl;
+                        } else if (Books.back().genre == 8) { // Sci Fi
 
-                                myFile << "Historical (7)" << std::endl;
-                            } else if (Books[i].genre == 8) { // Sci Fi
+                            myFile << "Science Fiction/Sci-Fi (8)" << std::endl;
+                        } else if (Books.back().genre == 9) { // Self Help/ Philosphy
 
-                                myFile << "Science Fiction/Sci-Fi (8)" << std::endl;
-                            } else if (Books[i].genre == 9) { // Self Help/ Philosphy
+                            myFile << "Self Help/Philosophy (9)" << std::endl;
+                        } else if (Books.back().genre == 10) { // Other/Multiple
 
-                                myFile << "Self Help/Philosophy (9)" << std::endl;
-                            } else if (Books[i].genre == 10) { // Other/Multiple
+                            myFile << "Other/Mutiple (10)" << std::endl;
+                        }
 
-                                myFile << "Other/Mutiple (10)" << std::endl;
-                            }
                             
-                            // Pages
-                            myFile << "Pages: " << Books[i].pages << std::endl;
+                        // Pages
+                        myFile << "Pages: " << Books.back().pages << std::endl;
 
-                            // Progress + Rating condtionals logic
-                            myFile << "Progress: ";
-                            if (Books[i].progress == 1) {
+                        // Progress + Rating condtionals logic
+                        myFile << "Progress: ";
+                        if (Books.back().progress == 1) {
 
-                                myFile << "Plan To Read (1)" << std::endl;
+                            myFile << "Plan To Read (1)" << std::endl;
                                 
-                            } else if (Books[i].progress == 2) {
+                        } else if (Books.back().progress == 2) {
 
-                                myFile << "Currently Reading (2)" << std::endl;
+                            myFile << "Currently Reading (2)" << std::endl;
                                 
-                            } else if (Books[i].progress == 3) {
+                        } else if (Books.back().progress == 3) {
 
-                                myFile << "Completed Book (3)" << std::endl;
-                                myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                                
-                            }                      
-                          
+                            myFile << "Completed Book (3)" << std::endl;
+                            myFile << "Rating (1-10): " << Books.back().rating << std::endl;
+                                                                                    
                         }
 
                         myFile.close();
@@ -429,65 +427,63 @@ main(){
                         // testing file within loop to see the flow    
                         myFile.open("books.txt", std::ios::app); {
                             if (myFile.is_open()) {
-                                for (int i = 0; i < Books.size(); i++) {
                                 
-                                    // add some info that comes from what the user stored within the loop 
-                                    myFile << "------------------------" << std::endl;
-                                    myFile << "Title: " << Books[i].title << std::endl;
-                                    myFile << "Author: " << Books[i].author << std::endl;
+                                // add some info that comes from what the user stored within the loop 
+                                myFile << "------------------------" << std::endl;
+                                myFile << "Title: " << Books.back().title << std::endl;
+                                myFile << "Author: " << Books.back().author << std::endl;
 
-                                    // Genre
-                                    myFile << "Genre: "; 
-                                    if (Books[i].genre == 1) { // Romance
+                                // Genre
+                                myFile << "Genre: "; 
+                                if (Books.back().genre == 1) { // Romance
 
-                                        myFile << "Romace (1)" << std::endl;
-                                    } else if (Books[i].genre == 2) { // Fantasy 
+                                    myFile << "Romace (1)" << std::endl;
+                                } else if (Books.back().genre == 2) { // Fantasy 
 
-                                        myFile << "Fantasy (2)" << std::endl;
-                                    } else if (Books[i].genre == 3) { // Mystery/Crime
+                                    myFile << "Fantasy (2)" << std::endl;
+                                } else if (Books.back().genre == 3) { // Mystery/Crime
 
-                                        myFile << "Mystery/Crime (3)" << std::endl;
-                                    } else if (Books[i].genre == 4) { // Horror
+                                    myFile << "Mystery/Crime (3)" << std::endl;
+                                } else if (Books.back().genre == 4) { // Horror
 
-                                        myFile << "Horror (4)" << std::endl;
-                                    } else if (Books[i].genre == 5) { // Thriller/Suspens
+                                    myFile << "Horror (4)" << std::endl;
+                                } else if (Books.back().genre == 5) { // Thriller/Suspens
 
-                                        myFile << "Thriller/Suspense (5)" << std::endl;
-                                    } else if (Books[i].genre == 6) { // History Fiction
+                                    myFile << "Thriller/Suspense (5)" << std::endl;
+                                } else if (Books.back().genre == 6) { // History Fiction
 
-                                        myFile << "Historical Fiction (6)" << std::endl;
-                                    } else if (Books[i].genre == 7) { // Historical
+                                    myFile << "Historical Fiction (6)" << std::endl;
+                                } else if (Books.back().genre == 7) { // Historical
 
-                                        myFile << "Historical (7)" << std::endl;
-                                    } else if (Books[i].genre == 8) { // Sci Fi
+                                    myFile << "Historical (7)" << std::endl;
+                                } else if (Books.back().genre == 8) { // Sci Fi
 
-                                        myFile << "Science Fiction/Sci-Fi (8)" << std::endl;
-                                    } else if (Books[i].genre == 9) { // Self Help/ Philosphy
+                                    myFile << "Science Fiction/Sci-Fi (8)" << std::endl;
+                                } else if (Books.back().genre == 9) { // Self Help/ Philosphy
 
-                                        myFile << "Self Help/Philosophy (9)" << std::endl;
-                                    } else if (Books[i].genre == 10) { // Other/Multiple
+                                    myFile << "Self Help/Philosophy (9)" << std::endl;
+                                } else if (Books.back().genre == 10) { // Other/Multiple
 
-                                        myFile << "Other/Mutiple (10)" << std::endl;
-                                    }
+                                    myFile << "Other/Mutiple (10)" << std::endl;
+                                }
                                     
-                                    // Pages
-                                    myFile << "Pages: " << Books[i].pages << std::endl;
+                                // Pages
+                                myFile << "Pages: " << Books.back().pages << std::endl;
 
-                                    //progess
-                                    myFile << "Progress: ";
-                                    if (Books[i].progress == 1) {
+                                //progess
+                                myFile << "Progress: ";
+                                if (Books.back().progress == 1) {
 
-                                        myFile << "Plan To Read (1)" << std::endl;
-                                    } else if (Books[i].progress == 2) {
+                                    myFile << "Plan To Read (1)" << std::endl;
+                                } else if (Books.back().progress == 2) {
 
-                                        myFile << "Currently Reading (2)" << std::endl;
-                                    } else if (Books[i].progress == 3) {
+                                    myFile << "Currently Reading (2)" << std::endl;
+                                } else if (Books.back().progress == 3) {
 
-                                        myFile << "Completed Book (3)" << std::endl;
-                                        myFile << "Rating (1-10): " << Books[i].rating << std::endl;
-                                    }
-
-                                }  
+                                    myFile << "Completed Book (3)" << std::endl;
+                                    myFile << "Rating (1-10): " << Books.back().rating << std::endl;
+                                }
+  
                                     
                                 myFile.close();
                             }
