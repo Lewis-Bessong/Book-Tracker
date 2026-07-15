@@ -197,7 +197,7 @@ main(){
     int SaveOption;
     int UserEval;
 
-    //container for books (stores/organizes data)
+    //Container for books (stores/organizes data)
     std::vector<BookBlueprint> Books; //contains objects from the "Book" class
 
     //Object
@@ -221,6 +221,7 @@ main(){
 
     std::this_thread::sleep_for(two_seconds); // program stops for 2s
 
+    // UI logic
     do { 
 
         MoodEval();
@@ -280,7 +281,7 @@ main(){
 
     // ======== SYSTEM LOGIC ========
 
-    // Looped Menu output, user input, and conditionals (switch statments)
+    // Looped Menu, user input, and conditionals (switch statments)
     do {
 
         std::string DummyInput; // used to repeat program
@@ -304,9 +305,9 @@ main(){
             case 1: // ===== SAVE OPTION =====
 
                 Book.BookInput(); // User inputs info           
-                Books.push_back(Book); // book gets stored (short term)
+                Books.push_back(Book); // Info stored in container
 
-                // info gets stored in file (long term)                
+                // FILE SAVE               
                 myFile.open("books.txt", std::ios::app); {
                     if (myFile.is_open()){
                        
