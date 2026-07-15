@@ -21,6 +21,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
         int rating;
         std::string SaveOption; // for user input towards save method
 
+
         void BookInput() { // what user will type info into
                 
             std::cin.clear();
@@ -156,7 +157,7 @@ struct BookBlueprint { // 'struct' to keep everything together regardless of dat
 
 void Menu() { // Starting menu for user (Seeing what the program can do)  
 
-    std::cout << "Book Tracker Menu.\n";
+    std::cout << "Menu\n";
     std::cout << "-----------------------------\n";
     std::cout << "1. Save New Book\n";
     std::cout << "2. View Saved Book\n";
@@ -164,7 +165,7 @@ void Menu() { // Starting menu for user (Seeing what the program can do)
     std::cout << "Option: "; // where input will take place
 }
 
-void SaveMode() {
+void SaveMode() { // 
 
     std::cin.clear();
     std::cout << "Book Saved.\n";
@@ -176,15 +177,11 @@ void SaveMode() {
 
 }
 
-void MoodEval() {
+void UpdateAlert() { // informs the user about any new updates made or future 
 
-    std::cout << "How are you ??\n";
-    std::cout << "----------------\n";
-    std::cout << "1. Good\n";
-    std::cout << "2. Happy\n";
-    std::cout << "3. Sad\n";
-    std::cout << "4. Mad" << std::endl;
-    std::cout << ": ";  
+}
+
+void UserFeedback() { // gets users feedback/concerns about system 
 
 }
 
@@ -195,7 +192,6 @@ main(){
     // variables
     int MenuOption;
     int SaveOption;
-    int UserEval;
 
     //Container for books (stores/organizes data)
     std::vector<BookBlueprint> Books; //contains objects from the "Book" class
@@ -206,6 +202,10 @@ main(){
     // File to store saved books
     std::fstream myFile;
 
+    // time durations in seconds
+    auto one_second = 1s; 
+    auto two_seconds = 2s;
+
     // overrides info everytime, this is temporary
     myFile.open("books.txt", std::ios::out);
     if (myFile.is_open()) {
@@ -214,69 +214,10 @@ main(){
     }
     
     // ======= USER INTERACTION ======
-
-    auto one_second = 1s; 
-    auto two_seconds = 2s; // duration of 2 seconds
-    std::cout << "Hello !!!" << std::endl;
+ 
+    std::cout << "Welcome to your Book Tracker !" << std::endl;
 
     std::this_thread::sleep_for(two_seconds); // program stops for 2s
-
-    // UI logic
-    do { 
-
-        MoodEval();
-
-        if (!(std::cin >> UserEval)) { // non number input
-
-            std::cout << "Okay so.." << std:: endl;
-            std::this_thread::sleep_for(one_second);
-            std::cout << "Enter a NUMBER" << std::endl;
-            std::this_thread::sleep_for(one_second);
-            std::cout << "Like 1, 2, 3, 4" << std::endl;
-            std::this_thread::sleep_for(one_second);
-            std::cin.clear(); // resets fail 
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears previous bad input
-
-            continue;  
-        }
-
-        if (UserEval == 1 || UserEval == 2) {
-
-            std::cout << "Thats good to hear!" << std::endl;
-            std::this_thread::sleep_for(one_second); 
-            std::cout << "but.." << std::endl;
-            std::this_thread::sleep_for(two_seconds); // program stops for 2s
-            std::cout << "you'll be happier once you save your book :)" << std::endl;
-            std::this_thread::sleep_for(two_seconds); // program stops for 2s
-            std::cout << "Enjoy!" << std::endl;
-            std::this_thread::sleep_for(one_second);
-
-            break;
-        } else if (UserEval == 3 || UserEval == 4) {
-
-            std::cout << "Wow" << std::endl; 
-            std::this_thread::sleep_for(one_second);
-            std::cout << "Well thank you for still using us when you feel like that" << std::endl; 
-            std::this_thread::sleep_for(two_seconds);
-            std::cout << "Enjoy and cheer up, life is short!" << std::endl; 
-            std::this_thread::sleep_for(two_seconds);
-
-            break;
-        } else {
-
-            std::cout << "Ouuu we did not understand.." << std::endl;
-            std::this_thread::sleep_for(one_second);
-            std::cout << "Ha\n";
-            std::this_thread::sleep_for(one_second);
-            std::cout << "Ha?\n"; 
-            std::this_thread::sleep_for(one_second);
-            std::cout << "Please try again..." << std::endl;
-            std::this_thread::sleep_for(one_second);
-
-            continue;
-        }
-    
-    } while(true);
      
 
     // ======== SYSTEM LOGIC ========
@@ -471,10 +412,10 @@ main(){
                                 continue;
                             } 
 
-                            if (SaveOption == 2) {
+                            if (SaveOption == 2) { // user stops saving
 
                                 break;
-                            } else if (SaveOption == 1) {
+                            } else if (SaveOption == 1) { // user continues saving
 
                                 Book.BookInput(); //input
                                 Books.push_back(Book); //store
@@ -546,7 +487,7 @@ main(){
                                 }
 
                                 continue;
-                            } else {
+                            } else { // invalid input
 
                                 std::cout << "WRONG INPUT" << std::endl;
                             }
@@ -591,6 +532,6 @@ main(){
                 std::cout << "WRONG INPUT." << std::endl;
         }
 
-    } while (MenuOption != 3); // do block will be repeated if this condition happens
+    } while (MenuOption != 3); // system will continue to run unless usr choses to end (3)
                
 }
