@@ -181,7 +181,16 @@ void UpdateAlert() { // informs the user about any new updates made or future
 
 }
 
-void UserFeedback() { // gets users feedback/concerns about system 
+void FeedbackOptions() { // gets users feedback/concerns about system 
+
+    std::cout << "Feedback Options\n";
+    std::cout << "(Explain after selection)\n";
+    std::cout << "---------------------------\n";
+    std::cout << "1. System bug/issues\n";
+    std::cout << "2. New feature request/Suggestions\n";
+    std::cout << "3. Questions\n";
+    std::cout << "4. Other" << std::endl;
+    std::cout << "Option: ";
 
 }
 
@@ -192,6 +201,7 @@ main(){
     // variables
     int MenuOption;
     int SaveOption;
+    int FeedbackOption;
 
     //Container for books (stores/organizes data)
     std::vector<BookBlueprint> Books; //contains objects from the "Book" class
@@ -524,12 +534,57 @@ main(){
                 break;
             case 3: // ===== STOP PROGRAM OPTION =====
                  
-                std::cout << "Goodbye!" << std::endl;
+                //Feedback + Stop conditionals
+                do {
+
+                    std::cout << "Feedback ?\n";
+                    std::cout << "--------------\n";
+                    std::cout << "1. Yes\n";
+                    std::cout << "2. No" << std::endl;
+                    std::cout << ":";
+                    
+                    if (!(std::cin >> FeedbackOption)) { // non number input
+
+                        std::cout << "INVALID INPUT: Please enter a number" <<std::endl;
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                        continue;
+                    } if (FeedbackOption == 1) { // chose yes
+
+                        FeedbackOptions();
+
+                        continue;
+
+                    } else if (FeedbackOption == 2) { // chose no 
+
+
+                        std::cout << "Hope you had no troubles !" << std::endl;
+                        
+                        std::this_thread::sleep_for(one_second); // pasue for 1 second
+
+                        std::cout << "Goodbye!" << std::endl;
+
+                        break;
+                        
+                    } else { // other numbers 
+
+                        std::cout << "INVALID INPUT: please input the options provided" <<std::endl;
+                        std::cin.clear();
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                        continue;
+                    }
+                
+                } while (true);
+            
                 std::exit(0); // end program immediatly with success
                 break;
+
             default: // ===== INVALID INPUT CASE =====
 
                 std::cout << "WRONG INPUT." << std::endl;
+              
         }
 
     } while (MenuOption != 3); // system will continue to run unless usr choses to end (3)
